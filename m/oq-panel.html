@@ -88,29 +88,36 @@
 					})
 					jQuery.ajaxSetup({async:true});
 		        }
+				var pointer_type='not-allowed';
 				if(status[m].rid!=1){
-					console.log("!!")
-					$li.removeClass('li_allowed__ID')
-					$li.addClass('li_not_allowed__ID')
+					$li.removeClass('li_not_allowed__ID')
+					if(window.location.toString().indexOf('_e=1')!=-1){
+						$li.addClass('li_edit__ID')
+						pointer_type='pointer';
+
+					}
+					else{
+						$li.addClass('li_not_allowed__ID')
+						console.log("ABC")
+					}
 				}
 				else{
-					console.log("##")
+					pointer_type='pointer';
 					$li.removeClass('li_not_allowed__ID')
 					$li.addClass('li_allowed__ID')
 				}
 				var task_name=$li.html();
 				var module=$li.attr('m');
-				$li.html("<u style='cursor:pointer' m="+module+">"+task_name+"</u>");
-				$li.find('u').on('click',function(){
-					var m=$(this).attr('m');
-					if(window.location.toString().indexOf('_e=1')!=-1){
-						var m=m+"-edit";
-					}
-					console.log(JSON.stringify(content))
-					var record=$vm.vm['__ID'].input.record;
-					console.log(JSON.stringify(record));
-					$vm.load_module(m,'',{record:content,goback:1});
-				});
+				$li.html("<u style='cursor:"+pointer_type+"' m="+module+">"+task_name+"</u>");
+				if(pointer_type=='pointer'){
+					$li.find('u').on('click',function(){
+						var m=$(this).attr('m');
+						if(window.location.toString().indexOf('_e=1')!=-1){
+							var m=m+"-edit";
+						}
+						$vm.load_module(m,'',{record:content,goback:1});
+					});
+				}
 				return false; // break out the loop
 		    })
 		    //----------------------------------
@@ -150,12 +157,16 @@
 		list-style:none;
 	}
 	.li_not_allowed__ID{
-		color:rgb(243, 12, 12)!Important;
-		cursor:pointer!Important;
+		color:rgb(243, 12, 12)!important;
+		cursor:default!important;
+	}
+	.li_edit__ID{
+		color:rgb(247, 161, 91)!important;
+		cursor:default!important;
 	}
 	.li_allowed__ID{
 		color:rgb(114, 250, 125)!Important;
-		cursor:pointer!Important;
+		cursor:default!important;
 	}
 	VmInclude:__CURRENT_PATH__/wappsystem-form.css
 
