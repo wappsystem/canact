@@ -1,0 +1,48 @@
+<div id=D__ID>
+    <div class='p-4' style='max-width:800px;margin-left:auto;margin-right:auto;background-color:rgb(250,250,234,0.8);border-radius:20px'>
+        <form id=F__ID>
+            <div id=page1__ID class="row  mr-0 ml-0 p-4">
+                <div class="col-lg-1 col-sm-0 ">
+                </div>
+                <div class="col-lg-9 col-sm-12 text-center">
+                    <b>CAN-ACT Report</b>
+                </div>
+                <div class="col-lg-1 col-sm-0 ">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="questiongroup ">
+                    <fieldset class="">
+                        <label style="width:100%"><span class="">Result A</span>
+                            <input class="form-control" type="text" name="Result_A" readonly>
+                        </label>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="questiongroup ">
+                    <fieldset class="subquestions">
+                        <label style="width:100%"><span class="">Result B</span>
+                            <input class="form-control" type="text" name="Result_B" readonly>
+                        </label>
+                    </fieldset>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script>
+        function F__ID() {
+            VmInclude: __COMPONENT__/f/form.01.js
+        }
+    </script>
+    <style>
+        #D__ID {
+            font-family: 'Roboto Slab';
+            animation: vm_module_fadein 1.0s;
+            color: #000;
+            /*background-color: #FFF;*/
+            min-height: 800px;
+        }
+        VmInclude:__CURRENT_PATH__/wappsystem-form.css
+    </style>
+</div>

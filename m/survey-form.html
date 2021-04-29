@@ -1,0 +1,200 @@
+<div id=D__ID>
+    <div class='p-4' style='max-width:800px;margin-left:auto;margin-right:auto;background-color:rgb(250,250,234,0.8);border-radius:20px'>
+        <form id=F__ID>
+            <div id=S1__ID>
+                <div id=page1__ID class="row  mr-0 ml-0 p-4"">
+                    <div class="col-lg-1 col-sm-0 ">
+                    </div>
+                    <div class="col-lg-9 col-sm-12 text-center">
+                        <span style="color:#888">1 of 2</span> <b>CAN-ACT questionniare</b>
+                    </div>
+                    <div class="col-lg-1 col-sm-0 ">
+                    </div>
+                </div>
+                <div id=quest1__ID style='margin-left:auto;margin-right:auto;'>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm control-group">
+                                <h4>1. Is your ...?
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="questiongroup">
+                            <fieldset class="pl-4">
+                                <label class="radiobuttons ">
+                                    <input type="radio" name="is_your" value="Y" required>
+                                    <span class="checkmark"></span>Yes</label>
+                                <label class="radiobuttons ">
+                                    <input type="radio" name="is_your" value="N">
+                                    <span class="checkmark"></span>No </label>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm control-group">
+                                <h4>2. How many ...?
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="questiongroup ">
+                            <fieldset class="subquestions">
+                                <legend>Number of ..?</legend>
+                                <label class="radiobuttons">
+                                    <input type="radio" name="how_many" value="0" required>
+                                    <span class="checkmark no-dot">0</span> 1-5</label><br>
+                                <label class="radiobuttons">
+                                    <input type="radio" name="how_many" value="1">
+                                    <span class="checkmark no-dot">1</span> 6-10</label><br>
+                                <label class="radiobuttons">
+                                    <input type="radio" name="how_many" value="2">
+                                    <span class="checkmark no-dot">2</span> 11-15</label><br>
+                                <label class="radiobuttons">
+                                    <input type="radio" name="how_many" value="3">
+                                    <span class="checkmark no-dot">3</span> 16-20</label><br>
+                                <label class="radiobuttons">
+                                    <input type="radio" name="how_many" value="4">
+                                    <span class="checkmark no-dot">4</span> 20+</label><br>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div style="text-align:right">
+                        <button type="submit" d=1 style="border-radius:2rem;background-color: #748A66;width:180px;height:60px;font-family: Arial, Helvetica, sans-serif" class="btn btn-success btn-lg">Next</button>
+                    </div>
+                </div>
+            </div>
+            <div id=S2__ID>
+                <div id=page2__ID class="row  mr-0 ml-0 p-4 rounded">
+                    <div class="col-lg-1 col-sm-0 ">
+                    </div>
+                    <div class="col-lg-10 col-sm-12 text-center">
+                        <span style="color:#888"><span style="color:#888">2 of 2</span> </span> <b>CAN - ACT</b>
+                    </div>
+                    <div class="col-lg-1 col-sm-0 ">
+                    </div>
+                </div>
+                <div id=quest2__ID style='max-width:800px;margin-left:auto;margin-right:auto;'>
+                    <div style="text-align:right">
+                        <button type="submit" d=1 style="border-radius:2rem;background-color: #748A66;width:180px;height:60px;font-family: Arial, Helvetica, sans-serif" class="btn btn-success btn-lg">Submit</button>
+                    </div>
+                </div>
+            </div>
+            <div id=S3__ID>
+                <div class="row  mr-0 ml-0 p-4 text-center" >
+                    <div class="col">
+                        Thank you for completing the CAN - ACT Questionnaire.<br><br>
+                    </div>
+                </div>
+                <div style='max-width:800px;margin-left:auto;margin-right:auto;'>
+                    <hr>
+                    <div class="text-center">
+                        To see the laboratory report, please save this link <br><br><br>
+                        <a id=hush_registration__ID target="_blank" style="color:#000;font-size: 130%;border-radius:5px;padding:5px;background-color: #748A66" ><span style='font-size:1.2rem;font-weight:bold;' id=refnum__ID></span></a>
+                        <br><br>
+                        Thanks you for your time<br><br>
+                    </div>
+                </div>
+            </div>
+            <div style='display:none'>
+                <div class='row px-4'>
+                    <div class="col-sm-12 col-lg-12 row_participant__ID">
+                        <label class=''><span class=''>Record ID</span>
+                            <input type=text class=form-control id=record__ID readonly>
+                        </label>
+                    </div>
+                </div>
+                <div class='row px-4'>
+                    <div class="col-sm-12 col-lg-6 ">
+                        <label class=''><span class=''>Password</span>
+                            <input type=text class=form-control name=_Password>
+                        </label>
+                    </div>
+                    <div class="col-sm-12 col-lg-6">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script>
+        function F__ID() {
+            VmInclude: __COMPONENT__/f/form.01.js
+            //---------------------------------------
+            var N = 3;
+            var current_I = 1;
+            //---------------------------------------
+            m.before_submit = function (data, index) {
+                return true;
+            }
+            //---------------------------------------
+            var old_submit = m.submit;
+            m.submit = function (event) {
+                event.preventDefault();
+                if (current_I == N-1) {
+                        show_section(current_I + 1);
+                        $('#F__ID *').removeAttr('disabled');
+                        $('#F__ID input[name=_Password').val($vm.vm_password(8, false));
+                        old_submit(event);
+                }
+                else if (current_I == N) {
+                    $('#F__ID *').removeAttr('disabled');
+                    $('#submit1__ID').hide();
+                    old_submit(event);
+                }
+                else show_section(current_I + 1);
+            }
+            //---------------------------------------
+            m.after_insert = function (data,index) {
+                var db=""; 
+                if(window.location.toString().indexOf('db=dev')!=-1) db="&db=dev";
+                var d="";  if(window.location.toString().indexOf('_d=1')!=-1) d="&_d=1";
+                var p="";  if(window.location.toString().indexOf('_p=1')!=-1) p="&_p=1";
+                var u="?username="+index.result.ops[0].UID+"&password="+$('#F__ID input[name=_Password').val();
+                //console.log(JSON.stringify(m))
+                var q_url=m.report.replace('$H',$vm.hosting_path)+u+db+d+p;
+                $('#refnum__ID').text(q_url);
+                $('#hush_registration__ID').attr("href",q_url)
+            }
+            //---------------------------------------
+            $('#D__ID').on('load', function () {
+                $('#submit1__ID').show();
+                $('#q4-1__ID').hide();
+                $('#shift__ID').removeAttr('required');
+                var hosting=$vm.hosting_path.replace("prescreening","registration")
+                $('#hush_registration__ID').attr("href",hosting)
+                show_section(1);
+            })
+            //---------------------------------------
+            $('#F__ID button').on('click', function (event) {
+                var d = $(this).attr("d");
+                d = parseInt(d);
+                if (d < 0) show_section(current_I - 1);
+                else {
+                    //do nothing, m.submit will handle  
+                }
+            })
+            //---------------------------------------
+            var show_section = function (I) {
+                for (var i = 1; i <= N; i++) {
+                    $('#S' + i + "__ID").hide(); // remove/add '//' for Test mode/Production mode 
+                    $('#S' + i + "__ID * ").attr('disabled', 'disabled');
+                }
+                if (I < 1) { I = 1; $('#S' + I + '__ID').show(); }
+                if (I >= N) I = N;
+                $('#S' + I + '__ID').show();
+                $('#S' + I + "__ID * ").removeAttr('disabled');
+                current_I = I;
+                $(window).scrollTop(0);
+            }
+        }
+    </script>
+    <style>
+        #D__ID {
+            font-family: 'Roboto Slab';
+            animation: vm_module_fadein 1.0s;
+            color: #000;
+            /*background-color: #FFF;*/
+            min-height: 800px;
+        }
+        VmInclude:__CURRENT_PATH__/wappsystem-form.css
+    </style>
+</div>
