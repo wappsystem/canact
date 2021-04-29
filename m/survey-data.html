@@ -9,14 +9,14 @@
             //-------------------------------------
             $('#title__ID').text('Survey');            
             //-------------------------------------
-            var fields="Record_ID|UID,is_your,how_many,_Questionnaire,_Login_ID,_Password";
+            var fields="Record_ID|UID,is_your,how_many,_Report,_Login_ID,_Password";
             m.fields="_Form,"+fields+",Submit_date,Submitted_by,_Delete";
             //-------------------------------------
             m.cell_render=function(records,I,field,td,set_value,source){
                 switch(field){
-                    case '_Questionnaire':
+                    case '_Report':
                         //MongoDB
-                        td.html("<u style='cursor:pointer'>Online Questionnaire</u>");
+                        td.html("<u style='cursor:pointer'>Add/Modify Report</u>");
                         td.find('u').on('click',function(){
                             var db=""; if(window.location.toString().indexOf('db=dev')!=-1) db="&db=dev";
                             var d="";  if(window.location.toString().indexOf('_d=1')!=-1) d="&_d=1";
