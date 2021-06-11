@@ -1,20 +1,60 @@
 <div id=D__ID>
-	<div class='text-center' style='max-width:800px;padding:20px;margin-left:auto;margin-right:auto;background-color:rgba(0, 0, 0, 0.4);border-radius:20px'>
-		<h1>The CAN- ACT Study</h1>
-		Do you ... ?<br>
-		Do you ... ?<br>
-		Are you interested ... ?<br>
+	<div class='text-center' style='max-width:800px;padding:20px;margin-left:auto;margin-right:auto;background-color:rgba(0, 0, 0, 0.8);border-radius:20px'>
+		<h1>Welcome to the CAN-ACT Study</h1>
+		New cannabis growth and possession laws came into effect in the Australian Capital Territory (ACT) in January 2020,
+        allowing ACT residents to grow and possess small quantities of cannabis. As researchers from the University of
+        Sydney, we are launching an Australia-wide online survey of people residing in ACT who have prior or current
+        experience with using or growing cannabis.
 
 		<br><br>
-		<h5>I agree on completing a questionnaire ...</h5>
-		<br>
-		<div class="row">
-			<div class="col-lg-6 col-sm-12 p-2">
-				<button id="yes__ID" style="background-color:#748A66" class="btn btn-lg">I agree</button>
+        <div class='text-left'>
+            <h5><u>Eligibility</u></h5>
+            You are invited to participate in the study, if:
+            <ul>
+                <li>You currently live in the ACT; and</li>
+                <li>You have current or prior experience using cannabis for any reason; or</li>
+                <li>You have current or prior experience growing cannabis.</li>
+            </ul>
+            <h5><u>The CAN-ACT study involves two components:</u></h5>
+            <ol>
+                <li>An online survey</li>
+                <li>The opportunity to have your personally-grown cannabis samples analysed for cannabinoid and contaminant content</li>
+            </ol>
+            <br><br>
+            The survey asks about:
+            <ul>
+                <li>You: your age, gender, level of education and current living and work situations</li>
+                <li>Your history of cannabis use</li>
+                <li>Your experience with growing cannabis</li>
+                <li>Access to prescribed medicinal cannabis</li>
+                <li>Access to non-prescribed medicinal cannabis</li>
+                <li>Opinions of the law and current legislation</li>
+            </ul>
+
+        </div>        
+        The survey should take around 10 minutes to complete.<br><br>
+        <i><u>Your answers are anonymous and confidential.</u></i> You have been allocated a user ID code that in no way allows your
+        responses to be matched to personal and/or identifying data. We will not ask any information that could identify
+        you.<br><br>
+        Once you complete the survey, you can <i><u>register to have samples of your cannabis analysed</u></i> for cannabinoid and
+        contaminant content.<br><br>
+        
+        <div class="form-group" id=pdfs__ID>
+            <a href="images/Participant Information Statement.docx.pdf"
+                target="_blank">
+                <div class="downloads">
+                 </div>
+                <b>For further details, please read the Participant Information Sheet attached here.</b>
+            </a>
+        </div>
+
+    <div class="row">
+			<div class="col-lg-12 col-sm-12 p-2">
+				<button id="yes__ID" style="background-color:#748A66" class="btn btn-lg">Continue</button>
 			</div>
-			<div class="col-lg-6 col-sm-12 p-2">
+<!--			<div class="col-lg-6 col-sm-12 p-2">
 				<button id="no__ID"  class="btn btn-outline-secondary">No thanks</button>
-			</div>
+			</div>-->
 		</div>
 		<div id=list__ID class=row style='background-color: white;padding: 5px;border-radius: 50px;'>
 			<div class="col-sm pt-2">
@@ -31,7 +71,7 @@
 			var m=$vm.module_list['__MODULE__'];
 			if(m.prefix==undefined) m.prefix="";
 			$('#yes__ID').on('click',function(){	$vm.load_module(m.prefix+'survey-form','',{});	})
-			$('#no__ID').on('click',function(){		$vm.alert("Completing questionnaires is necessary to be part of the study.") })
+			//$('#no__ID').on('click',function(){		$vm.alert("Completing questionnaires is necessary to be part of the study.") })
 			$('#list__ID').on('dblclick',function(){
 				console.log("AAAAAA: "+JSON.stringify(m))
 				$vm.load_module(m.prefix+'survey-data','',{});	
