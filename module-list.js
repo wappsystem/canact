@@ -1,7 +1,7 @@
 (function(){
     var modules={
         "survey-data": {url:"$H/m/survey-data.html",Table:"canact-survey",form_module:"survey-form",report:"$H/oq.html",router:1},
-        "survey-form": {url:"$H/m/survey-form.html",Table:"canact-survey",report:"$H/oq.html"},
+        "survey-form": {url:"$H/m/survey-form.html",Table:"canact-survey",report:"$H/oq.html",router:1},
         "report-form": {url:"$H/m/report-form.html",Table:"canact-report",task_name:"Report Details"},
         "report-form-edit": {url:"$H/m/report-form-edit.html",Table:"canact-report",task_name:"Report Details"},
         "report-canact":{url:"$H/oq.html"},

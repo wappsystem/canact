@@ -177,7 +177,7 @@
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: white !important;
+    background: black !important;
 }
 #D__ID .container .checkmark.no-dot:after {
     width: 0;
@@ -227,7 +227,7 @@
 #D__ID .container .check_checkmark:after {
     top: 0px;
     left: 6px;
-    color:white;
+    color:black;
     content:"✔";
 }
 #D__ID .form-group input[type=text] {
