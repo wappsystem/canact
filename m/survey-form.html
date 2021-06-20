@@ -53,11 +53,11 @@
                                 </fieldset>
                             </div>
                         </div>-->
-                    </div>
+                </div>
+                <div class="form-group">
                     <div style="text-align:right">
                         <button type="submit" id=test__ID d=1 style="border-radius:2rem;background-color: #748A66;width:180px;height:60px;font-family: Arial, Helvetica, sans-serif" class="btn btn-success btn-lg">SUBMIT</button>
                     </div>
-
                 </div>
             </div>
             <div id=S2__ID>
@@ -441,7 +441,7 @@
                                 <span class="">8. Cannabis cultivation refers to the process by which cannabis flowers are produced (i.e., grown) for any purpose. It is legal to grow small quantities of cannabis in the Australian Capital Territory. <br><br>
                                     Have you ever cultivated cannabis yourself?
                                 </span>
-                                <select name="can_cultivated" class=form-control >
+                                <select name="can_cultivated" class=form-control required>
                                     <option value=''></option>
                                     <option value='1'>a. Yes, I am currently growing cannabis</option>
                                     <option value='2'>b. Yes, but I no longer grow cannabis</option>
@@ -494,7 +494,7 @@
                         </fieldset>
                     </div>
                 </div>
-                <div id=cult_q1ah__ID style='display:none'>
+                <div id=cult_q1ah__ID style='display:xnone'>
                     <div class="form-group">
                         <div class="questiongroup ">
                             <fieldset class=""><span class=""></span>
@@ -503,7 +503,7 @@
                                     <div class="questiongroup ">
                                         <fieldset class=""><span class=""></span>
                                             <label ><span class="">a. How many cannabis plants have you attempted to grow?</span>
-                                                <input class="form-control" type="number" min=0 name="cult_plants_grow" placeholder="plants"  >
+                                                <input class="form-control" type="number" min=0 name="cult_plants_grow" placeholder="plants" required >
                                             </label><br>
                                         </fieldset>
                                     </div>
@@ -512,7 +512,7 @@
                                     <div class="questiongroup ">
                                         <fieldset class=""><span class=""></span>
                                             <label ><span class="">b. How many cannabis plants have you successfully harvested?</span>
-                                                <input class="form-control" type="number" min=0 name="cult_plants_harvest" placeholder="plants"  >
+                                                <input class="form-control" type="number" min=0 name="cult_plants_harvest" placeholder="plants" required >
                                             </label><br>
                                         </fieldset>
                                     </div>
@@ -521,7 +521,7 @@
                                     <div class="questiongroup ">
                                         <fieldset class=""><span class=""></span>
                                             <label ><span class="">c. How many grams of DRIED cannabis was yielded from your successful harvest? If you do not know, please enter '0'</span>
-                                                <input class="form-control" type="number" min=0 name="cult_plants_other" placeholder="grams"  >
+                                                <input class="form-control" type="number" min=0 name="cult_plants_other" placeholder="grams" required >
                                             </label><br>
                                         </fieldset>
                                     </div>
@@ -529,8 +529,8 @@
                                 <div class="form-group">
                                     <div class="questiongroup ">
                                         <fieldset class=""><span class=""></span>
-                                            <label ><span class="">a. How much money have you spent sourcing cannabis seeds/cuttings/juveniles to grow yourself?</span>
-                                                <input class="form-control" type="number" min=0 name="cult_plants_spent" placeholder="AUD"  >
+                                            <label ><span class="">d. How much money have you spent sourcing cannabis seeds/cuttings/juveniles to grow yourself?</span>
+                                                <input class="form-control" type="number" min=0 name="cult_plants_spent" placeholder="AUD" required >
                                             </label><br>
                                         </fieldset>
                                     </div>
@@ -865,7 +865,23 @@
                         <div class="questiongroup ">
                             <fieldset class="subquestions">
                                 <label><span class="">10. Which cannabinoid/s do you THINK your home-grown cannabis is highest in?</span>
-                                    <select name="cult_thc_cbd" class=form-control required>
+                                    <select name="cult_think_thc_cbd" class=form-control >
+                                        <option value=''></option>
+                                        <option value='1'>a. THC</option>
+                                        <option value='2'>b. CBD</option>
+                                        <option value='3'>c. THC and CBD</option>
+                                        <option value='4'>d. I'm not sure</option>
+                                        <option value='5'>e. Other cannabinoid</option>
+                                    </select>
+                                </label><br>
+                            </fieldset>
+                        </div>
+                    </div>    
+                    <div class="form-group">
+                        <div class="questiongroup ">
+                            <fieldset class="subquestions">
+                                <label><span class="">11. Which cannabinoid/s would you LIKE your home-grown cannabis to be highest in?</span>
+                                    <select name="cult_like_thc_cbd" class=form-control >
                                         <option value=''></option>
                                         <option value='1'>a. THC</option>
                                         <option value='2'>b. CBD</option>
@@ -1004,10 +1020,10 @@
                         </div>
                     </div>    
                 </div>
-            </div>
-            <div class="form-group">
-                <div class='text-right pt-4'>
-                    <button type="submit" d=1 style="border-radius:2rem;background-color: #748A66;width:180px;height:60px;font-family: Arial, Helvetica, sans-serif" class="btn btn-success btn-lg">Next</button>
+                <div class="form-group">
+                    <div class='text-right pt-4'>
+                        <button type="submit" d=1 style="border-radius:2rem;background-color: #748A66;width:180px;height:60px;font-family: Arial, Helvetica, sans-serif" class="btn btn-success btn-lg">Next</button>
+                    </div>
                 </div>
             </div>
             <div id=S5__ID>
@@ -1145,11 +1161,11 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <div class='text-right pt-4'>
-                    <button type="submit" d=1 style="border-radius:2rem;background-color: #748A66;width:180px;height:60px;font-family: Arial, Helvetica, sans-serif" class="btn btn-success btn-lg">Next</button>
-                </div>
+                <div class="form-group">
+                    <div class='text-right pt-4'>
+                        <button type="submit" d=1 style="border-radius:2rem;background-color: #748A66;width:180px;height:60px;font-family: Arial, Helvetica, sans-serif" class="btn btn-success btn-lg">Next</button>
+                    </div>
+                </div>    
             </div>
             <div id=S6__ID>
                 <div id=page6__ID class="row  mr-0 ml-0 p-4">
@@ -2395,11 +2411,11 @@
                         </fieldset>
                     </div>
                 </div>          
-            </div>
-            <div class="form-group">
-                <div class='text-right pt-4'>
-                    <button type="submit" d=1 style="border-radius:2rem;background-color: #748A66;width:180px;height:60px;font-family: Arial, Helvetica, sans-serif" class="btn btn-success btn-lg">Next</button>
-                </div>
+                <div class="form-group">
+                    <div class='text-right pt-4'>
+                        <button type="submit" d=1 style="border-radius:2rem;background-color: #748A66;width:180px;height:60px;font-family: Arial, Helvetica, sans-serif" class="btn btn-success btn-lg">Next</button>
+                    </div>
+                </div>    
             </div>
             <div id=S7__ID>
                 <div id=page6__ID class="row  mr-0 ml-0 p-4">
@@ -3656,11 +3672,11 @@
                         </fieldset>
                     </div>
                 </div>          
-            </div>
-            <div class="form-group">
-                <div class='text-right pt-4'>
-                    <button type="submit" d=1 style="border-radius:2rem;background-color: #748A66;width:180px;height:60px;font-family: Arial, Helvetica, sans-serif" class="btn btn-success btn-lg">Next</button>
-                </div>
+                <div class="form-group">
+                    <div class='text-right pt-4'>
+                        <button type="submit" d=1 style="border-radius:2rem;background-color: #748A66;width:180px;height:60px;font-family: Arial, Helvetica, sans-serif" class="btn btn-success btn-lg">Next</button>
+                    </div>
+                </div>    
             </div>
             <div id=S8__ID>
                 <div id=page8__ID class="row  mr-0 ml-0 p-4">
@@ -3894,11 +3910,11 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <div class='text-right pt-4'>
-                    <button type="submit" d=1 style="border-radius:2rem;background-color: #748A66;width:180px;height:60px;font-family: Arial, Helvetica, sans-serif" class="btn btn-success btn-lg">Next</button>
-                </div>
+                <div class="form-group">
+                    <div class='text-right pt-4'>
+                        <button type="submit" d=1 style="border-radius:2rem;background-color: #748A66;width:180px;height:60px;font-family: Arial, Helvetica, sans-serif" class="btn btn-success btn-lg">Next</button>
+                    </div>
+                </div>    
             </div>
             <div id=S9__ID>
                 <div id=page8__ID class="row  mr-0 ml-0 p-4">
@@ -4061,11 +4077,11 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <div class='text-right pt-4'>
-                    <button type="submit" d=1 style="border-radius:2rem;background-color: #748A66;width:180px;height:60px;font-family: Arial, Helvetica, sans-serif" class="btn btn-success btn-lg">Next</button>
-                </div>
+                <div class="form-group">
+                    <div class='text-right pt-4'>
+                        <button type="submit" d=1 style="border-radius:2rem;background-color: #748A66;width:180px;height:60px;font-family: Arial, Helvetica, sans-serif" class="btn btn-success btn-lg">Next</button>
+                    </div>
+                </div>    
             </div>
             <div id=S10__ID>
                 <div id=page8__ID class="row  mr-0 ml-0 p-4">
@@ -4582,6 +4598,10 @@
                     $('#submit1__ID').hide();
                     old_submit(event);
                 }
+                else if(current_I == 3 && $("select[name='can_use']").val()=='4' && $("select[name='can_cultivated']").val()=='3'){
+                    if(m.prefix==undefined) {$vm.load_module('not_elig','',{});}
+                    else $vm.load_module(m.prefix+'not_elig','',{});
+                }
                 else show_section(current_I + 1);
             }
             //---------------------------------------
@@ -4693,35 +4713,39 @@
                 if($('#can_use__ID').val()!='' && $('#can_use__ID').val()!='4'){
                     $('#can_q1ac__ID').show();
                     $("input[name='can_age_first']").prop('required', true)
+                    $("input[name='can_start_first']").prop('required', true)
+                    $("input[name='can_time_used']").prop('required', true)
                 }
                 else{
                     $("input[name='can_age_first']").prop('required', false);
+                    $("input[name='can_start_first']").prop('required', false)
+                    $("input[name='can_time_used']").prop('required', false)
                     $('#can_q1ac__ID').hide();
                 }
                 if($('#can_use__ID').val()=='1' || $('#can_use__ID').val()=='2'){
                     $('#can_q1ab__ID').show();
-                    $("input[name='can_current_use']").prop('required', true)
+                    $("select[name='can_current_use']").prop('required', true)
                 }
                 else{
-                    $("input[name='can_current_use']").prop('required', false);
+                    $("select[name='can_current_use']").prop('required', false);
                     $('#can_q1ab__ID').hide();
                 }
                 if($('#can_use__ID').val()=='3'){
                     $('#can_q1c__ID').show();
-                    $("input[name='can_previous_use']").prop('required', true)
+                    $("select[name='can_previous_use']").prop('required', true)
                 }
                 else{
-                    $("input[name='can_previous_use']").prop('required', false);
+                    $("select[name='can_previous_use']").prop('required', false);
                     $('#can_q1c__ID').hide();
                 }
             })
             $('#can_current_use__ID').on('change', function () {
                 if($('#can_current_use__ID').val()=='3'){
                     $('#can_q5c__ID').show();
-                    $("input[name='can_previous_use']").prop('required', true)
+                    $("select[name='can_medical_use']").prop('required', true)
                 }
                 else{
-                    $("input[name='can_previous_use']").prop('required', false);
+                    $("select[name='can_medical_use']").prop('required', false);
                     $('#can_q5c__ID').hide();
                 }
             })
@@ -4729,8 +4753,18 @@
             $("select[name='cult_duration']").on('change', function () {
                 if($("select[name='cult_duration']").val()!='8'){
                     $('#cult_q1ag__ID').show();
+                    $("select[name='cult_grow']").prop('required', true)
+                    $("select[name='cult_roots']").prop('required', true)
+                    $("select[name='cult_think_thc_cbd']").prop('required', true)
+                    $("select[name='cult_like_thc_cbd']").prop('required', true)
+                    $("select[name='cult_contaminants']").prop('required', true)
                 }
                 else{
+                    $("select[name='cult_grow']").prop('required', false)
+                    $("select[name='cult_roots']").prop('required', false)
+                    $("select[name='cult_think_thc_cbd']").prop('required', false)
+                    $("select[name='cult_like_thc_cbd']").prop('required', false)
+                    $("select[name='cult_contaminants']").prop('required', false)
                     $('#cult_q1ag__ID').hide();
                 }
             })
@@ -4856,8 +4890,11 @@
                 console.log($("select[name='cult_duration']").val())
                 if($("select[name='cult_duration']").val()=='8'){
                     $('#cult_q1h__ID').show();
+                    $("select[name='cult_stopped']").prop('required', true)
+
                 }
                 else{
+                    $("select[name='cult_stopped']").prop('required', false)
                     $('#cult_q1h__ID').hide();
                 }
             })
@@ -4877,7 +4914,7 @@
                     $("input[name='cult_stopped_other']").prop('required', true)
                 }
                 else{
-                    $("input[name='cult_stopped_other']").prop('required', true)
+                    $("input[name='cult_stopped_other']").prop('required', false)
                     $('#cult_stopped__ID').hide();
                 }
             })
