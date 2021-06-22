@@ -1,12 +1,13 @@
 <div id=page__ID>
 	<div id=panel__ID class="container-fluid" style='max-width:800px'>
 		<div class="text-center panel__ID">
-
-    	  	<hr style='border-top:1px solid #000;'></hr>
-    		<h5 class= "text-left ml-5">Please click on the link below to see the report. (Green when ready)<br></h5>
-            <div id=items__ID  class= "text-left ml-5"></div>
+				<!--<img style="width:50%" src="images/logo_small.png">-->
+				<h5 class= "text-left ml-5" id=congratulation__ID style='color:lawngreen;font-size:1.2rem'></h5>
+				<hr style='border-top:1px solid #000;'></hr>
+			  <h5 class= "text-left ml-5">Please complete of the following questionnaires.</h5>Which questionnaire we like you to answer depends on your answers in previous questionnaires<br><br>
+			  <div id=items__ID  class= "text-left ml-5"></div>
             <h5 class= "">
-                Click on ‘sign-out’ below, to exit the system. <br>Thank you!<br><br>
+                Once they are completed please click on ‘sign-out’ below, to exit the system. <br>Thank you!<br><br>
             </h5>
             <a name=signinout onclick="$vm.signout();" class="btn btn-primary" style='cursor:pointer'>Sign out</a>
     	</div>
@@ -20,20 +21,47 @@
 
 <script>
 	function F__ID(){
+        //-------------------------------------
+        var m=$vm.module_list['__MODULE__'];
 		//--------------------------------------------------------
         var id_list;
+        var cannabis_ii=[];
+        var cannabis_iv=[];
 		//--------------------------------------------------------
 		$('#D__ID').on('load',function(){
 		})
 		//--------------------------------------------------------
 		$('#D__ID').on('show',function(){
-            var record=$vm.vm['__ID'].input.record;
-			console.log($vm.vm['__ID'].input.record)
-			id_list="report-form";
+			id_list="cannabis-ii-form,cannabis-iii-form,cannabis-iv-form,cannabis-v-form,cannabis-vi-form,cannabis-vii-form,cannabis-viii-form,cannabis-ix-form";
             if(id_list==undefined){
                 alert("No questionnaire was found");
                 return;
             }
+            jQuery.ajaxSetup({async:false});
+                    $vm.request({cmd:"find-s",table:$vm.module_list['cannabis-ii-form'].Table,options:{}},function(res){
+                        if(res.permission==false){
+                            alert("No permission");
+                            return;
+                        }
+                        if(res.result.length==0){
+                        }
+                        else{
+                            cannabis_ii=res.result[0]
+                        }
+                    })
+                    $vm.request({cmd:"find-s",table:$vm.module_list['cannabis-iv-form'].Table,options:{}},function(res){
+                        if(res.permission==false){
+                            alert("No permission");
+                            return;
+                        }
+                        if(res.result.length==0){
+                        }
+                        else{
+                            cannabis_iv=res.result[0]
+                        }
+                    })
+                jQuery.ajaxSetup({async:true});
+
 			setup_panel();
 		})
 		//--------------------------------------------------------
@@ -42,7 +70,10 @@
 		var setup_panel=function(){
 			//----------------------------------
 		    var ids=id_list.split(',');
-		    var txt="<ul>";
+			var txt="<ul>";
+			var count=0;
+			var tot_count=0;
+			var quest=false;
 		    //----------------------------------
 		    for(var i=0;i<ids.length;i++){
 				var m=ids[i];
@@ -55,12 +86,13 @@
 					task_name=mm.task_name;
 					status[m].Table=mm.Table;
 				}
-				txt+="<li m="+m+">"+task_name+"</li> <i>Estimated time for generating a report is x weeks.</i>";
+				txt+="<li m="+m+">"+task_name+"</li>";
 		    }
             txt+"</ul>";
 		    $('#items__ID').html(txt);
 		    //----------------------------------
 			$('#items__ID li').each(function(){
+				tot_count++;
 		        var $li=$(this);
 				$li.removeClass('li_allowed__ID')
 				$li.addClass('li_not_allowed__ID')
@@ -69,56 +101,138 @@
 			$('#items__ID li').each(function(){
 		        var $li=$(this);
 		        var m=$li.attr('m');
-				console.log($li)
-				var content;
+                console.log("M1: "+m)
 		        if(status[m].rid==0){
-					jQuery.ajaxSetup({async:false});
-					$vm.request({cmd:"find-s",table:$vm.module_list[m].Table,options:{}},function(res){
-						if(res.permission==false){
-							alert("No permission");
-							return;
-						}
-						if(res.result.length==0){
-						}
-						else{
-							console.log(JSON.stringify(res.result))
-							content=res.result[0];
-							status[m].rid=1;
-						}
-					})
-					jQuery.ajaxSetup({async:true});
+                    jQuery.ajaxSetup({async:false});
+                    $vm.request({cmd:"find-s",table:$vm.module_list[m].Table,options:{}},function(res){
+                        if(res.permission==false){
+                            alert("No permission");
+                            return;
+                        }
+                        if(res.result.length==0){
+                        }
+                        else{
+                            status[m].rid=1;
+                        }
+                    })
+                    jQuery.ajaxSetup({async:true});
 		        }
-				var pointer_type='not-allowed';
-				if(status[m].rid!=1){
-					$li.removeClass('li_not_allowed__ID')
-					if(window.location.toString().indexOf('_e=1')!=-1){
-						$li.addClass('li_edit__ID')
-						pointer_type='pointer';
-
-					}
-					else{
-						$li.addClass('li_not_allowed__ID')
-						console.log("ABC")
-					}
-				}
-				else{
-					pointer_type='pointer';
+                if(count==1){
+                    console.log("1-"+m)
+                    if(cannabis_ii.Data.can_cultivated=='1' || cannabis_ii.Data.can_cultivated=='2'){
+                        console.log("A")
+                    }
+                    else {
+                        $li.removeClass('li_not_allowed__ID')
+                        $li.addClass('li_not_show__ID')
+                        status[m].rid=1;
+                        console.log("B "+m)
+                    }
+                }
+                if(count==2){
+                    console.log("2-"+m)
+                    if(cannabis_ii.Data.can_current_use=='1' || cannabis_ii.Data.can_current_use=='3' || cannabis_ii.Data.can_current_use=='4' || cannabis_ii.Data.can_current_use=='5'  || cannabis_ii.Data.can_previous_use=='1' ){
+                        console.log("E")
+                    }
+                    else {
+                        $li.removeClass('li_not_allowed__ID')
+                        $li.addClass('li_not_show__ID')
+                        status[m].rid=1;
+                        console.log("F"+m)
+                        //return false;
+                    }
+                }
+                if(count==3){
+                    if(cannabis_iv.length!=0){
+                        console.log("3-"+m)
+                        if(cannabis_iv.Data.med_doctor=='1'){
+                            console.log("A")
+                        }
+                        else {
+                            $li.removeClass('li_not_allowed__ID')
+                            $li.addClass('li_not_show__ID')
+                            status[m].rid=1;
+                            console.log("BA "+m)
+                        }
+                    }
+                    else{
+                        $li.removeClass('li_not_allowed__ID')
+                            $li.addClass('li_not_show__ID')
+                            status[m].rid=1;
+                            console.log("BB "+m)
+                    }
+                }
+                if(count==4){
+                    if(cannabis_iv.length!=0){
+                        console.log("4-"+m)
+                        if(cannabis_iv.Data.med_source_a=='on' || cannabis_iv.Data.med_source_b=='on' || cannabis_iv.Data.med_source_c=='on' || cannabis_iv.Data.med_source_d=='on' || cannabis_iv.Data.med_source_e=='on' || cannabis_iv.Data.med_source_f=='on' || cannabis_iv.Data.med_source_g=='on' || cannabis_iv.Data.med_source_h=='on'){
+                            console.log("A")
+                        }
+                        else {
+                            $li.removeClass('li_not_allowed__ID')
+                            $li.addClass('li_not_show__ID')
+                            status[m].rid=1;
+                            console.log("BA "+m)
+                        }
+                    }
+                    else{
+                        $li.removeClass('li_not_allowed__ID')
+                            $li.addClass('li_not_show__ID')
+                            status[m].rid=1;
+                            console.log("BB "+m)
+                    }
+                }
+                if(count==5){
+                    console.log("2-"+m)
+                    if(cannabis_ii.Data.can_current_use=='2' || cannabis_ii.Data.can_current_use=='3' || cannabis_ii.Data.can_current_use=='4' || cannabis_ii.Data.can_current_use=='5'  || cannabis_ii.Data.can_previous_use=='2'|| cannabis_ii.Data.can_previous_use=='3' ){
+                        console.log("E")
+                    }
+                    else {
+                        $li.removeClass('li_not_allowed__ID')
+                        $li.addClass('li_not_show__ID')
+                        status[m].rid=1;
+                        console.log("F"+m)
+                        //return false;
+                    }
+                }
+		        if(status[m].rid==0){
+                    console.log("C:"+m)
+					count++;
+					quest=true
+					console.log(tot_count+" - "+count)
+					var completed;
+                    console.log(JSON.stringify(cannabis_ii))
+                    if(count==1) completed="10";
+					else if(count==2) completed="30";
+					else if(count==3) completed="50";
+					else if(count==4) completed="60";
+					else if(count==5) completed="75";
+					else if(count==6) completed="80";
+					else if(count==7) completed="85";
+					else if(count==8) completed="90";
+                    
+                    $('#congratulation__ID').html("Congratulations! You have already completed "+completed+"% of the questionnaires<br><br>" )
 					$li.removeClass('li_not_allowed__ID')
 					$li.addClass('li_allowed__ID')
+		            var task_name=$li.html();
+		            var module=$li.attr('m');
+		            $li.html("<u style='cursor:pointer' m="+module+">"+task_name+"</u>");
+		            $li.find('u').on('click',function(){
+		                var m=$(this).attr('m');
+                        var record=$vm.vm['__ID'].input.record;
+                        console.log("record: "+JSON.stringify(record))
+						$vm.load_module(m,'',{participant_record:record,goback:1});
+		            });
+		            return false; // break out the loop
+		        }
+				else{
+                    console.log("D Count: "+count)
+					count++;
+					if(count==ids.length && quest==false){
+						$vm.load_module('report','',{goback:1});
+					}
+
 				}
-				var task_name=$li.html();
-				var module=$li.attr('m');
-				$li.html("<u style='cursor:"+pointer_type+"' m="+module+">"+task_name+"</u>");
-				if(pointer_type=='pointer'){
-					$li.find('u').on('click',function(){
-						var m=$(this).attr('m');
-						if(window.location.toString().indexOf('_e=1')!=-1){
-							var m=m+"-edit";
-						}
-						$vm.load_module(m,'',{record:content,goback:1});
-					});
-				}
-				return false; // break out the loop
 		    })
 		    //----------------------------------
 		}
@@ -157,16 +271,19 @@
 		list-style:none;
 	}
 	.li_not_allowed__ID{
-		color:rgb(243, 12, 12)!important;
-		cursor:default!important;
-	}
-	.li_edit__ID{
-		color:rgb(247, 161, 91)!important;
-		cursor:default!important;
+		color:#aaa!Important;
+		cursor:not-allowed!Important;
+        display:block;
 	}
 	.li_allowed__ID{
-		color:rgb(114, 250, 125)!Important;
-		cursor:default!important;
+		color:#fff!Important;
+		cursor:pointer!Important;
+        display:block;
+	}
+	.li_not_show__ID{
+		color:#aaa!Important;
+		cursor:not-allowed!Important;
+        display:none;
 	}
 	VmInclude:__CURRENT_PATH__/wappsystem-form.css
 

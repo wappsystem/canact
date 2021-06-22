@@ -6,6 +6,15 @@
         "report-form": {url:"$H/m/report-form.html",Table:"canact-report",task_name:"Report Details"},
         "report-form-edit": {url:"$H/m/report-form-edit.html",Table:"canact-report",task_name:"Report Details"},
         "report-canact":{url:"$H/oq.html"},
+        "report":       {url:"$H/m/oq-panel-report.html"},
+        "cannabis-ii-form": {url:"$H/m/cannabis-ii-form.html",Table:"canact-cannabis-ii",task_name:"II. PREVIOUS AND CURRENT CANNABIS USE"},
+        "cannabis-iii-form": {url:"$H/m/cannabis-iii-form.html",Table:"canact-cannabis-iii",task_name:"III. CANNABIS CULTIVATION"},
+        "cannabis-iv-form": {url:"$H/m/cannabis-iv-form.html",Table:"canact-cannabis-iv",task_name:"IV. ACCESS TO MEDICINAL CANNABIS"},
+        "cannabis-v-form": {url:"$H/m/cannabis-v-form.html",Table:"canact-cannabis-v",task_name:"V. PRESCRIBED MEDICINAL CANNABIS  "},
+        "cannabis-vi-form": {url:"$H/m/cannabis-vi-form.html",Table:"canact-cannabis-vi",task_name:"VI. NON-PRESCRIBED MEDICINAL CANNABIS  "},
+        "cannabis-vii-form": {url:"$H/m/cannabis-vii-form.html",Table:"canact-cannabis-vii",task_name:"VII. RECREATIONAL CANNABIS  "},
+        "cannabis-viii-form": {url:"$H/m/cannabis-viii-form.html",Table:"canact-cannabis-viii",task_name:"VIII. HARMFUL EFFECTS  "},
+        "cannabis-ix-form": {url:"$H/m/cannabis-ix-form.html",Table:"canact-cannabis-xi",task_name:"XI. LEGISLATION "},
 
     }
     for(p in modules){

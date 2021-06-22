@@ -5,7 +5,7 @@
 			<div class="text-center panel__ID">
                     <!--<img style="width:100%" src="images/logo_small.png">-->
                 <h2  class="text-center" >Entry to</h2>
-                <h4 class="text-center" >Report Portal</h4>
+                <h4 class="text-center" >Questionnaire Portal</h4>
 	            <hr style='border-top:1px solid #fff;'></hr>
 	            <div class="">
 	                <input id=username__ID placeholder="Username" class="form-control" autocomplete="off" />
@@ -59,6 +59,7 @@
                     var x = document.getElementById("vm_signout");
                     x.className="";
                     console.log(m.questionnaire_panel)
+                    console.log(JSON.stringify(res.result))
                     $vm.load_module(m.questionnaire_panel,'',{record:res.result});
                 }
                 else{

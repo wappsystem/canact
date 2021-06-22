@@ -1,0 +1,229 @@
+<div id=D__ID>
+    <div class='container p-4' style='max-width:800px;margin-left:auto;margin-right:auto;background-color:rgb(250,250,234,0.8);border-radius:20px'>
+        <form id=F__ID>
+            <div id=S3__ID>
+                <!-- participant part for all tsak forms -------------------->
+                <div id="participant_div__ID" style='display:none'>
+                    <div class="row px-4">
+                        <div class="col-sm-12 col-lg-3">
+                            <span class=label__ID>Participant ID</span><br>
+                            <input type=text name="Participant_uid" class=form-control readonly />
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+               
+                <div id=page3__ID class="row  mr-0 ml-0 p-4">
+                    <div class="col-lg-1 col-sm-0 ">
+                    </div>
+                    <div class="col-lg-9 col-sm-12 text-center">
+                        <span style="color:#888"></span> <b>II. PREVIOUS AND CURRENT CANNABIS USE</b>
+                    </div>
+                    <div class="col-lg-1 col-sm-0 ">
+                    </div>
+                </div>
+                <div class="text-left p-2" style='background-color: lightyellow;'>
+                    The following questions ask about your experience with cannabis.<br><br>
+                    Please read each question carefully. <br><br>
+                    <u>Medicinal cannabis</u> refers to cannabis used to relieve symptoms or medical conditions. This can involve cannabis products PRESCRIBED by a doctor (including THC and/or CBD containing oils, capsules, sprays or plant material) or obtained through NON-PRESCRIBED routes (e.g., from family, friends, a dealer, or purchased online). <br> <br>
+                    <u>Non-medicinal (or recreational)</u> cannabis refers to cannabis use for non-medicinal reasons, e.g., to relax, for pleasure, or to get ‘high’.<br><br>
+                    <b>Your responses are anonymous and confidential. </b><br>
+                                    </div>
+                <br><br>
+                <div class="form-group">
+                    <div class="questiongroup ">
+                        <fieldset class="subquestions">
+                            <label><span class="">1. Which best describes your CURRENT cannabis use for ANY reason?</span>
+                                <select id=can_use__ID name="can_use" class=form-control required>
+                                    <option value=''></option>
+                                    <option value='1'>a. I currently use cannabis</option>
+                                    <option value='2'>b. I occasionally use cannabis</option>
+                                    <option value='3'>c. I have previously, but no longer use cannabis</option>
+                                    <option value='4'>d. I have never used cannabis</option>
+                                </select>
+                            </label><br>
+                        </fieldset>
+                    </div>
+                </div>
+                <div id=can_q1ac__ID style='display:none'>
+                    <div class="form-group">
+                        <div class="questiongroup ">
+                            <fieldset class=""><span class=""></span>
+                                <label ><span class="">2. How old were you when you FIRST tried cannabis for ANY reason?</span>
+                                    <input class="form-control" type="number" min=0 max=99 name="can_age_first" placeholder="Years"  >
+                                </label><br>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="questiongroup ">
+                            <fieldset class=""><span class=""></span>
+                                <label ><span class="">3.  How old were you when you first started using cannabis REGULARLY for ANY reason?</span>
+                                    <input class="form-control" type="number" min=0 max=99 name="can_start_first" placeholder="Years"  >
+                                </label><br>
+                                <label ><span class=""><i>If you have never used cannabis regularly, please enter ‘0’.</i></span></label>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="questiongroup ">
+                            <fieldset class=""><span class=""></span>
+                                <label ><span class="">4. In the past 28 days, how many times have you used cannabis for ANY reason? </span>
+                                    <input class="form-control" type="number" min=0 max=28 name="can_time_used" placeholder="Days"  >
+                                </label><br>
+                                <label ><span class=""><i>If you haven’t used cannabis in the past 28 days, please enter ‘0’.</i></span></label>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+                <div id=can_q1ab__ID style='display:none'>
+                    <div class="form-group">
+                        <div class="questiongroup ">
+                            <fieldset class=""><span class=""></span>
+                                <label >
+                                    <span class=""><u>5. Medicinal cannabis</u> refers to cannabis used to relieve symptoms or treat symptoms of medical conditions. Medicinal cannabis products can be prescribed by a doctor or sourced through non-prescribed routes.<br><br>
+                                        <u>Non-medicinal (or recreational)</u> cannabis refers to cannabis that is not used to treat symptoms of medical conditions. For example, it is used to relax, for pleasure, or to get ‘high’. <br><br>
+                                        Which of the following best describes your CURRENT cannabis use?
+                                    </span>
+                                    <select id=can_current_use__ID name="can_current_use" class=form-control >
+                                        <option value=''></option>
+                                        <option value='1'>a. Medicinal only</option>
+                                        <option value='2'>b. Non-medicinal (or recreational) only</option>
+                                        <option value='3'>c. Both medicinal and non-medicinal (recreational)</option>
+                                        <option value='4'>d. Previously non-medicinal only, now medicinal only </option>
+                                        <option value='5'>d. Previously medicinal only, non-medicinal only</option>
+                                    </select>
+                                    </label><br>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+                <div id=can_q1c__ID style='display:none'>
+                    <div class="form-group">
+                        <div class="questiongroup ">
+                            <fieldset class=""><span class=""></span>
+                                <label >
+                                    <span class="">6. Which best describes your previous cannabis use?
+                                    </span>
+                                    <select name="can_previous_use" class=form-control >
+                                        <option value=''></option>
+                                        <option value='1'>a. Medicinal only</option>
+                                        <option value='2'>b. Non-medicinal (or recreational) only</option>
+                                        <option value='3'>c. Both medicinal and non-medicinal (recreational)</option>
+                                    </select>
+                                    </label><br>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+                <div id=can_q5c__ID style='display:none'>
+                    <div class="form-group">
+                        <div class="questiongroup ">
+                            <fieldset class=""><span class=""></span>
+                                <label >
+                                    <span class="">7. On the days that you use cannabis, please indicate the percentage of use you consider to be MEDICINAL, as a proportion of your total use for ANY reason:
+                                    </span>
+                                    <select name="can_medical_use" class=form-control >
+                                        <option value=''></option>
+                                        <option value='0'>Medicinal 0%. All non Medicinal</option>
+                                        <option value='10'>Medicinal 10% of total use</option>
+                                        <option value='20'>Medicinal 20% of total use</option>
+                                        <option value='30'>Medicinal 30% of total use</option>
+                                        <option value='40'>Medicinal 40% of total use</option>
+                                        <option value='50'>Medicinal 50% of total use</option>
+                                        <option value='60'>Medicinal 60% of total use</option>
+                                        <option value='70'>Medicinal 70% of total use</option>
+                                        <option value='80'>Medicinal 80% of total use</option>
+                                        <option value='90'>Medicinal 90% of total use</option>
+                                        <option value='100'>Medicinal 100%. All Medicinal</option>
+                                    </select>
+                                    </label><br>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="questiongroup ">
+                        <fieldset class=""><span class=""></span>
+                            <label >
+                                <span class="">8. Cannabis cultivation refers to the process by which cannabis flowers are produced (i.e., grown) for any purpose. It is legal to grow small quantities of cannabis in the Australian Capital Territory. <br><br>
+                                    Have you ever cultivated cannabis yourself?
+                                </span>
+                                <select name="can_cultivated" class=form-control required>
+                                    <option value=''></option>
+                                    <option value='1'>a. Yes, I am currently growing cannabis</option>
+                                    <option value='2'>b. Yes, but I no longer grow cannabis</option>
+                                    <option value='3'>c. No, I have never grown cannabis</option>
+                                </select>
+                            </label><br>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class='text-right pt-4'>
+                    <button type="submit" d=1 style="border-radius:2rem;background-color: #748A66;width:180px;height:60px;font-family: Arial, Helvetica, sans-serif" class="btn btn-success btn-lg">Next</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script>
+        function F__ID(){
+            //-------------------------------------
+            VmInclude:'__COMPONENT__/f/form.01.js'
+            VmInclude:__CURRENT_PATH__/shared-form.js
+            //-------------------------------------
+            var load2=m.load;
+            m.load=function(){
+              load2();
+              $('#title__ID').text($vm.module_list[$vm.vm['__ID'].name].task_name);
+            }
+            //-------------------------------------
+            //--II. PREVIOUS AND CURRENT CANNABIS USE ----
+            $('#can_use__ID').on('change', function () {
+                if($('#can_use__ID').val()!='' && $('#can_use__ID').val()!='4'){
+                    $('#can_q1ac__ID').show();
+                    $("input[name='can_age_first']").prop('required', true)
+                    $("input[name='can_start_first']").prop('required', true)
+                    $("input[name='can_time_used']").prop('required', true)
+                }
+                else{
+                    $("input[name='can_age_first']").prop('required', false);
+                    $("input[name='can_start_first']").prop('required', false)
+                    $("input[name='can_time_used']").prop('required', false)
+                    $('#can_q1ac__ID').hide();
+                }
+                if($('#can_use__ID').val()=='1' || $('#can_use__ID').val()=='2'){
+                    $('#can_q1ab__ID').show();
+                    $("select[name='can_current_use']").prop('required', true)
+                }
+                else{
+                    $("select[name='can_current_use']").prop('required', false);
+                    $('#can_q1ab__ID').hide();
+                }
+                if($('#can_use__ID').val()=='3'){
+                    $('#can_q1c__ID').show();
+                    $("select[name='can_previous_use']").prop('required', true)
+                }
+                else{
+                    $("select[name='can_previous_use']").prop('required', false);
+                    $('#can_q1c__ID').hide();
+                }
+            })
+            $('#can_current_use__ID').on('change', function () {
+                if($('#can_current_use__ID').val()=='3'){
+                    $('#can_q5c__ID').show();
+                    $("select[name='can_medical_use']").prop('required', true)
+                }
+                else{
+                    $("select[name='can_medical_use']").prop('required', false);
+                    $('#can_q5c__ID').hide();
+                }
+            })            
+        }
+    </script>
+    <style>
+        #D__ID .mt-95 {
+        max-width:600px;
+    }
+        VmInclude:__CURRENT_PATH__/wappsystem-form.css
+    </style>
+  </div>
