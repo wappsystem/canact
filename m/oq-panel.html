@@ -119,6 +119,11 @@
 		        }
                 if(count==1){
                     console.log("1-"+m)
+                    if(cannabis_ii.Data.can_use==4 && cannabis_ii.Data.can_cultivated==3) {
+                        if(m.prefix==undefined) {$vm.load_module('not_elig','',{});}
+                        else $vm.load_module(m.prefix+'not_elig','',{});
+                        return false;
+                    }
                     if(cannabis_ii.Data.can_cultivated=='1' || cannabis_ii.Data.can_cultivated=='2'){
                         console.log("A")
                     }
