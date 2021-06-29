@@ -1,19 +1,19 @@
 <div id=D__ID>
-    <div class='container p-4' style='max-width:800px;margin-left:auto;margin-right:auto;background-color:rgb(250,250,234,0.8);border-radius:20px'>
+    <div class='container p-4' style='max-width:800px;margin-left:auto;margin-right:auto;background-color:rgb(250,250,234,0.94);border-radius:20px'>
         <form id=F__ID>
             <div id=S1__ID>
                 <div id=page1__ID class="row  mr-0 ml-0 p-4">
                     <div class="col-lg-1 col-sm-0 ">
                     </div>
                     <div class="col-lg-9 col-sm-12 text-center">
-                        <span style="color:#888"></span> <b>CONSENT FORM</b>
+                        <h4><span style="color:#888"></span> <b><u>CONSENT FORM</u></b></h4>
                     </div>
                     <div class="col-lg-1 col-sm-0 ">
                     </div>
                 </div>
                 <div id=quest1__ID style='margin-left:auto;margin-right:auto;'>
                     <div class="form-group">
-                        By clicking <u>SUBMIT</u>, I confirm that:
+                        By clicking <u>SUBMIT</u>, I confirm that:<br><br>
                         <ol>
                         <li>I have read the attached Information Sheet and agree to take part in the following research
                         project:</li>
@@ -54,6 +54,7 @@
                             </div>
                         </div>-->
                 </div>
+                <input type=text name=consent style="display:none" />
                 <div class="form-group">
                     <div style="text-align:right">
                         <button type="submit" id=test__ID d=1 style="border-radius:2rem;background-color: #748A66;width:180px;height:60px;font-family: Arial, Helvetica, sans-serif" class="btn btn-success btn-lg">SUBMIT</button>
@@ -65,7 +66,7 @@
                     <div class="col-lg-1 col-sm-0 ">
                     </div>
                     <div class="col-lg-9 col-sm-12 text-center">
-                        <span style="color:#888"></span> <b>I. ABOUT YOU</b>
+                        <span style="color:#888"></span> <b>ABOUT YOU</b>
                     </div>
                     <div class="col-lg-1 col-sm-0 ">
                     </div>
@@ -78,22 +79,30 @@
                 <div class="form-group">
                     <div class="questiongroup ">
                         <fieldset class="subquestions">
-                            <label><span class="">1. What gender do you identify with?</span>
+                            <label><span class="">What gender do you identify with?</span>
                                 <select name="you_gender" class=form-control required>
                                     <option value=''></option>
-                                    <option value='1'>a. Female</option>
-                                    <option value='2'>b. Male</option>
-                                    <option value='3'>c. Other</option>
-                                    <option value='4'>d. Prefer not to say</option>
+                                    <option value='1'>Female</option>
+                                    <option value='2'>Male</option>
+                                    <option value='3'>Non-binary</option>
+                                    <option value='4'>I use a different term</option>
+                                    <option value='5'>Prefer not to say</option>
                                 </select>
                             </label><br>
                         </fieldset>
+                        <div id=you_gender_other__ID style='display:none'>
+                            <fieldset class="subquestions">
+                                <label ><span class="">Please specify</span>
+                                    <input class="form-control" type="text" name="you_gender_other" placeholder="Please specify" >
+                                </label><br>
+                            </fieldset>
+                        </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="questiongroup ">
                         <fieldset class=""><span class=""></span>
-                            <label ><span class="">2. What is your age?</span>
+                            <label ><span class="">What is your age?</span>
                                 <input class="form-control" type="number" min=0 max=99 name="you_age" placeholder="Years" required >
                             </label><br>
                         </fieldset>
@@ -102,15 +111,15 @@
                 <div class="form-group">
                     <div class="questiongroup ">
                         <fieldset class="subquestions">
-                            <label><span class="">3. What is the highest level of education you have completed?</span>
+                            <label><span class="">What is the highest level of education you have completed?</span>
                                 <select name="you_education" class=form-control required>
                                     <option value=''></option>
-                                    <option value='1'>a. Primary School</option>
-                                    <option value='2'>b. Secondary/High School</option>
-                                    <option value='3'>c. Trade or Vocational training (e.g., TAFE or college)</option>
-                                    <option value='4'>d. Undergraduate University degree (e.g., Bachelors, Honours)</option>
-                                    <option value='5'>d. Postgraduate University degree (e.g., Masters, PhD)</option>
-                                    <option value='6'>d. Other</option>
+                                    <option value='1'>Primary School</option>
+                                    <option value='2'>Secondary/High School</option>
+                                    <option value='3'>Trade or Vocational training (e.g., TAFE or college)</option>
+                                    <option value='4'>Undergraduate University degree (e.g., Bachelors, Honours)</option>
+                                    <option value='5'>Postgraduate University degree (e.g., Masters, PhD)</option>
+                                    <option value='6'>Other</option>
                                 </select>
                             </label><br>
                         </fieldset>
@@ -126,38 +135,38 @@
                 <div class="form-group">
                     <div class="questiongroup ">
                         <fieldset class="">
-                            <label><span class="">4. Which best describes your current employment status? Select all that apply. </span></label><br>
+                            <label><span class="">Which best describes your current employment status? Select all that apply. </span></label><br>
                             <label class="checkboxes">
                                 <input type="checkbox" name="you_employment_status_a">
-                                <span class="check_checkmark"></span>a. Full-time work</span>
+                                <span class="check_checkmark"></span>Full-time work</span>
                              </label><br>
                              <label class="checkboxes">
                                 <input type="checkbox" name="you_employment_status_b">
-                                <span class="check_checkmark"></span>b. Part-time work</span>
+                                <span class="check_checkmark"></span>Part-time work</span>
                              </label><br>
                              <label class="checkboxes">
                                 <input type="checkbox" name="you_employment_status_c">
-                                <span class="check_checkmark"></span>c. Home duties</span>
+                                <span class="check_checkmark"></span>Home duties</span>
                              </label><br>
                              <label class="checkboxes">
                                 <input type="checkbox" name="you_employment_status_d">
-                                <span class="check_checkmark"></span>d. Unemployed</span>
+                                <span class="check_checkmark"></span>Unemployed</span>
                              </label><br>
                              <label class="checkboxes">
                                 <input type="checkbox" name="you_employment_status_e">
-                                <span class="check_checkmark"></span>e. Retired</span>
+                                <span class="check_checkmark"></span>Retired</span>
                              </label><br>
                              <label class="checkboxes">
                                 <input type="checkbox" name="you_employment_status_f">
-                                <span class="check_checkmark"></span>f. Disability pension</span>
+                                <span class="check_checkmark"></span>Disability pension</span>
                              </label><br>
                              <label class="checkboxes">
                                 <input type="checkbox" name="you_employment_status_g">
-                                <span class="check_checkmark"></span>g. Student</span>
+                                <span class="check_checkmark"></span>Student</span>
                              </label><br>
                              <label class="checkboxes">
                                 <input type="checkbox" id="test__ID" name="you_employment_status_h">
-                                <span class="check_checkmark"></span>h. Other</span>
+                                <span class="check_checkmark"></span>Other</span>
                              </label><br>
                         </fieldset>
                         <div id=you_employment_status_other__ID style='display:none'>
@@ -172,22 +181,22 @@
                 <div class="form-group">
                     <div class="questiongroup ">
                         <fieldset class="subquestions">
-                            <label><span class="">5. Which of the following best describes the sector you have been employed in for the majority of your working life?</span>
+                            <label><span class="">Which of the following best describes the sector you have been employed in for the majority of your working life?</span>
                                 <select name="you_employment" class=form-control required>
                                     <option value=''></option>
-                                    <option value='1'>a. Hospitality</option>
-                                    <option value='2'>b. Retail</option>
-                                    <option value='3'>c. Corporate</option>
-                                    <option value='4'>d. Healthcare</option>
-                                    <option value='5'>e. Public service (i.e., Government)</option>
-                                    <option value='6'>f. Law enforcement</option>
-                                    <option value='7'>g. Education</option>
-                                    <option value='8'>h. Manufacturing</option>
-                                    <option value='9'>i. Construction</option>
-                                    <option value='10'>j. Transport</option>
-                                    <option value='11'>k. Mining</option>
-                                    <option value='12'>l. Never employed</option>
-                                    <option value='13'>m. Other</option>
+                                    <option value='1'>Hospitality</option>
+                                    <option value='2'>Retail</option>
+                                    <option value='3'>Corporate</option>
+                                    <option value='4'>Healthcare</option>
+                                    <option value='5'>Public service (i.e., Government)</option>
+                                    <option value='6'>Law enforcement</option>
+                                    <option value='7'>Education</option>
+                                    <option value='8'>Manufacturing</option>
+                                    <option value='9'>Construction</option>
+                                    <option value='10'>Transport</option>
+                                    <option value='11'>Mining</option>
+                                    <option value='12'>Never employed</option>
+                                    <option value='13'>Other</option>
                                 </select>
                             </label><br>
                         </fieldset>
@@ -203,15 +212,15 @@
                 <div class="form-group">
                     <div class="questiongroup ">
                         <fieldset class="subquestions">
-                            <label><span class="">6. Please indicate your current property type:</span>
+                            <label><span class="">Please indicate your current property type:</span>
                                 <select name="you_property" class=form-control required>
                                     <option value=''></option>
-                                    <option value='1'>a. Apartment (or commercial residency)</option>
-                                    <option value='2'>b. House (detached, semi-detached or terrace)</option>
-                                    <option value='3'>c. Large property or farm</option>
-                                    <option value='4'>d. Granny flat</option>
-                                    <option value='5'>e. Caravan or other mobile or temporary structure</option>
-                                    <option value='6'>f. Other</option>
+                                    <option value='1'>Apartment (or commercial residency)</option>
+                                    <option value='2'>House (detached, semi-detached or terrace)</option>
+                                    <option value='3'>Large property or farm</option>
+                                    <option value='4'>Granny flat</option>
+                                    <option value='5'>Caravan or other mobile or temporary structure</option>
+                                    <option value='6'>Other</option>
                                 </select>
                             </label><br>
                         </fieldset>
@@ -227,38 +236,38 @@
                 <div class="form-group">
                     <div class="questiongroup ">
                         <fieldset class="">
-                            <label><span class="">7. Who else lives with you in your household? Select all that apply.</span></label><br>
+                            <label><span class="">Who else lives with you in your household? Select all that apply.</span></label><br>
                             <label class="checkboxes">
                                 <input type="checkbox" name="you_household_a">
-                                <span class="check_checkmark"></span>a. Friends or housemates</span>
+                                <span class="check_checkmark"></span>Friends or housemates</span>
                              </label><br>
                              <label class="checkboxes">
                                 <input type="checkbox" name="you_household_b">
-                                <span class="check_checkmark"></span>b. Spouse or partner</span>
+                                <span class="check_checkmark"></span>Spouse or partner</span>
                              </label><br>
                              <label class="checkboxes">
                                 <input type="checkbox" name="you_household_c">
-                                <span class="check_checkmark"></span>c. Children</span>
+                                <span class="check_checkmark"></span>Children</span>
                              </label><br>
                              <label class="checkboxes">
                                 <input type="checkbox" name="you_household_d">
-                                <span class="check_checkmark"></span>d. Parents</span>
+                                <span class="check_checkmark"></span>Parents</span>
                              </label><br>
                              <label class="checkboxes">
                                 <input type="checkbox" name="you_household_e">
-                                <span class="check_checkmark"></span>e. Siblings or other family members</span>
+                                <span class="check_checkmark"></span>Siblings or other family members</span>
                              </label><br>
                              <label class="checkboxes">
                                 <input type="checkbox" name="you_household_f">
-                                <span class="check_checkmark"></span>f. Grandparents</span>
+                                <span class="check_checkmark"></span>Grandparents</span>
                              </label><br>
                              <label class="checkboxes">
                                 <input type="checkbox" name="you_household_g">
-                                <span class="check_checkmark"></span>g. No one, I live alone</span>
+                                <span class="check_checkmark"></span>No one, I live alone</span>
                              </label><br>
                              <label class="checkboxes">
                                 <input type="checkbox" name="you_household_h">
-                                <span class="check_checkmark"></span>h. Other</span>
+                                <span class="check_checkmark"></span>Other</span>
                              </label><br>
                         </fieldset>
                         <div id=you_household_other__ID style='display:none'>
@@ -273,19 +282,19 @@
                 <div class="form-group">
                     <div class="questiongroup ">
                         <fieldset class="subquestions">
-                            <label><span class="">8. Where did you first hear about this survey?</span>
+                            <label><span class="">Where did you first hear about this survey?</span>
                                 <select name="you_hear" class=form-control required>
                                     <option value=''></option>
-                                    <option value='1'>a. Facebook</option>
-                                    <option value='2'>b. Other social media (e.g., Instagram, Twitter, Snapchat)</option>
-                                    <option value='3'>c. Online forum (e.g., Reddit, Whirlpool, Bluelight)</option>
-                                    <option value='4'>d. Media (newspaper, radio, TV)</option>
-                                    <option value='5'>e. A friend or family member</option>
-                                    <option value='6'>f. Medicinal cannabis provider</option>
-                                    <option value='7'>g. Consumer support group</option>
-                                    <option value='8'>h. Doctor/healthcare provider</option>
-                                    <option value='9'>i. Lambert Initiative website</option>
-                                    <option value='10'>j. Other</option>
+                                    <option value='1'>Facebook</option>
+                                    <option value='2'>Other social media (e.g., Instagram, Twitter, Snapchat)</option>
+                                    <option value='3'>Online forum (e.g., Reddit, Whirlpool, Bluelight)</option>
+                                    <option value='4'>Media (newspaper, radio, TV)</option>
+                                    <option value='5'>A friend or family member</option>
+                                    <option value='6'>Medicinal cannabis provider</option>
+                                    <option value='7'>Consumer support group</option>
+                                    <option value='8'>Doctor/healthcare provider</option>
+                                    <option value='9'>Lambert Initiative website</option>
+                                    <option value='10'>Other</option>
                                 </select>
                             </label><br>
                         </fieldset>
@@ -307,16 +316,15 @@
             <div id=S3__ID>
                 <div class="row  mr-0 ml-0 p-4 text-center" >
                     <div class="col">
-                        Thank you for starting the CAN - ACT Questionnaire.<br><br>
+                        Thank you for participating in the CAN-ACT Study.<br><br>
                     </div>
                 </div>
                 <div style='max-width:800px;margin-left:auto;margin-right:auto;'>
                     <hr>
                     <div class="text-center">
-                        Use this link to finalise the questionnaire. You can return to it at any time<br><br><br>
+                        Please click this link to begin the questionnaire. You can log out and return to it at any point <br><br><br>
                         <a id=canact_registration__ID target="_blank" style="color:#000;font-size: 130%;border-radius:5px;padding:5px;background-color: #748A66" ><span style='font-size:1.2rem;font-weight:bold;' id=refnum__ID></span></a>
                         <br><br>
-                        Thanks you for your time<br><br>
                     </div>
                 </div>
             </div>
@@ -356,22 +364,25 @@
                 console.log("current_I: "+current_I)
                 event.preventDefault();
                 if (current_I == N-1) {
-                        show_section(current_I + 1);
-                        $('#F__ID *').removeAttr('disabled');
-                        $('#F__ID input[name=_Password').val($vm.vm_password(8, false));
-                        old_submit(event);
+                    console.log(parseInt($("#F__ID input[name='you_age']").val()))
+                    if(parseInt($("#F__ID input[name='you_age']").val())<17){
+                        if(m.prefix==undefined) {$vm.load_module('not_elig','',{});}
+                        else $vm.load_module(m.prefix+'not_elig','',{});
+                    }
+                    show_section(current_I + 1);
+                    $('#F__ID *').removeAttr('disabled');
+                    $('#F__ID input[name=_Password').val($vm.vm_password(8, false));
+                    old_submit(event);
                 }
                 else if (current_I == N) {
                     $('#F__ID *').removeAttr('disabled');
                     $('#submit1__ID').hide();
                     old_submit(event);
                 }
-/*                else if(current_I == 3 && $("select[name='can_use']").val()=='4' && $("select[name='can_cultivated']").val()=='3'){
-                    if(m.prefix==undefined) {$vm.load_module('not_elig','',{});}
-                    else $vm.load_module(m.prefix+'not_elig','',{});
+                else {
+                    if(current_I==1){ $("#F__ID input[name='consent']").val("Yes")}
+                    show_section(current_I + 1);
                 }
-*/
-                else show_section(current_I + 1);
             }
             //---------------------------------------
             m.after_insert = function (data,index) {
@@ -417,63 +428,73 @@
                 $(window).scrollTop(0);
             }
             //--ABOUT YOU----------------------------------
-            $("select[name='you_education']").on('change', function () {
-                if($("select[name='you_education']").val()=='6'){
-                    $('#you_education_other__ID').show();
-                    $("input[name='you_education_other']").prop('required', true)
+            $("#F__ID select[name='you_gender']").on('change', function () {
+                if($("#F__ID select[name='you_gender']").val()=='4'){
+                    $('#you_gender_other__ID').show();
+                    $("#F__ID input[name='you_gender_other']").prop('required', true)
                 }
                 else{
-                    $("input[name='you_education_other']").prop('required', false);
+                    $("#F__ID input[name='you_gender_other']").prop('required', false);
+                    $('#you_gender_other__ID').hide();
+                }
+            })
+            $("#F__ID select[name='you_education']").on('change', function () {
+                if($("#F__ID select[name='you_education']").val()=='6'){
+                    $('#you_education_other__ID').show();
+                    $("#F__ID input[name='you_education_other']").prop('required', true)
+                }
+                else{
+                    $("#F__ID input[name='you_education_other']").prop('required', false);
                     $('#you_education_other__ID').hide();
                 }
             })
-            $("input[name='you_employment_status_h']").on('change', function () {
-                if($("input[name='you_employment_status_h']:checked").val()=='on'){
+            $("#F__ID input[name='you_employment_status_h']").on('change', function () {
+                if($("#F__ID input[name='you_employment_status_h']:checked").val()=='on'){
                     $('#you_employment_status_other__ID').show();
-                    $("input[name='you_employment_other']").prop('required', true)
+                    $("#F__ID input[name='you_employment_other']").prop('required', true)
                 }
                 else{
-                    $("input[name='you_employment_other']").prop('required', false);
+                    $("#F__ID input[name='you_employment_other']").prop('required', false);
                     $('#you_employment_status_other__ID').hide();
                 }
             })
-            $("select[name='you_employment']").on('change', function () {
-                if($("select[name='you_employment']").val()=='13'){
+            $("#F__ID select[name='you_employment']").on('change', function () {
+                if($("#F__ID select[name='you_employment']").val()=='13'){
                     $('#you_employment_other__ID').show();
-                    $("input[name='you_employment_other']").prop('required', true)
+                    $("#F__ID input[name='you_employment_other']").prop('required', true)
                 }
                 else{
-                    $("input[name='you_employment_other']").prop('required', false);
+                    $("#F__ID input[name='you_employment_other']").prop('required', false);
                     $('#you_employment_other__ID').hide();
                 }
             })
-            $("select[name='you_property']").on('change', function () {
-                if($("select[name='you_property']").val()=='6'){
+            $("#F__ID select[name='you_property']").on('change', function () {
+                if($("#F__ID select[name='you_property']").val()=='6'){
                     $('#you_property_other__ID').show();
-                    $("input[name='you_property_other']").prop('required', true)
+                    $("#F__ID input[name='you_property_other']").prop('required', true)
                 }
                 else{
-                    $("input[name='you_property_other']").prop('required', false);
+                    $("#F__ID input[name='you_property_other']").prop('required', false);
                     $('#you_property_other__ID').hide();
                 }
             })
-            $("input[name='you_household_h']").on('change', function () {
-                if($("input[name='you_household_h']:checked").val()=='on'){
+            $("#F__ID input[name='you_household_h']").on('change', function () {
+                if($("#F__ID input[name='you_household_h']:checked").val()=='on'){
                     $('#you_household_other__ID').show();
-                    $("input[name='you_household_other']").prop('required', true)
+                    $("#F__ID input[name='you_household_other']").prop('required', true)
                 }
                 else{
-                    $("input[name='you_household_other']").prop('required', false);
+                    $("#F__ID input[name='you_household_other']").prop('required', false);
                     $('#you_household_other__ID').hide();
                 }
             })
-            $("select[name='you_hear']").on('change', function () {
-                if($("select[name='you_hear']").val()=='10'){
+            $("#F__ID select[name='you_hear']").on('change', function () {
+                if($("#F__ID select[name='you_hear']").val()=='10'){
                     $('#you_hear_other__ID').show();
-                    $("input[name='you_hear_other']").prop('required', true)
+                    $("#F__ID input[name='you_hear_other']").prop('required', true)
                 }
                 else{
-                    $("input[name='you_hear_other']").prop('required', false);
+                    $("#F__ID input[name='you_hear_other']").prop('required', false);
                     $('#you_hear_other__ID').hide();
                 }
             })

@@ -13,7 +13,7 @@
         "cannabis-v-form": {url:"$H/m/cannabis-v-form.html",Table:"canact-cannabis-v",task_name:"V. PRESCRIBED MEDICINAL CANNABIS  "},
         "cannabis-vi-form": {url:"$H/m/cannabis-vi-form.html",Table:"canact-cannabis-vi",task_name:"VI. NON-PRESCRIBED MEDICINAL CANNABIS  "},
         "cannabis-vii-form": {url:"$H/m/cannabis-vii-form.html",Table:"canact-cannabis-vii",task_name:"VII. RECREATIONAL CANNABIS  "},
-        "cannabis-viii-form": {url:"$H/m/cannabis-viii-form.html",Table:"canact-cannabis-viii",task_name:"VIII. HARMFUL EFFECTS  "},
+        "cannabis-viii-form": {url:"$H/m/cannabis-viii-form.html",Table:"canact-cannabis-viii",task_name:"VIII. UNEXPECTED ADVERSE EFFECTS  "},
         "cannabis-ix-form": {url:"$H/m/cannabis-ix-form.html",Table:"canact-cannabis-xi",task_name:"XI. LEGISLATION "},
 
     }

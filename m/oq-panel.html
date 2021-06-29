@@ -4,12 +4,13 @@
 				<!--<img style="width:50%" src="images/logo_small.png">-->
 				<h5 class= "text-left ml-5" id=congratulation__ID style='color:lawngreen;font-size:1.2rem'></h5>
 				<hr style='border-top:1px solid #000;'></hr>
-			  <h5 class= "text-left ml-5">Please complete of the following questionnaires.</h5>Which questionnaire we like you to answer depends on your answers in previous questionnaires<br><br>
-			  <div id=items__ID  class= "text-left ml-5"></div>
-            <h5 class= "">
-                Once they are completed please click on ‘sign-out’ below, to exit the system. <br>Thank you!<br><br>
-            </h5>
-            <a name=signinout onclick="$vm.signout();" class="btn btn-primary" style='cursor:pointer'>Sign out</a>
+			  <h5 class= "text-left ml-5">Please complete of the following section.</h5>Note the section you answer next depends upon your answers in previous sections<br><br>
+			  <div id=items__ID  class= "text-left ml-5" style="font-size:larger"></div>
+            <h6 class= "">
+                You can pause and re-enter the survey through logging in and out of the platform. <br>
+                Please keep note of your user ID and password. As they survey is anonymised, the research team will be unable to locate or reset your login details. <br>Thank you!<br><br>
+            </h6>
+            <!--<a name=signinout onclick="$vm.signout();" class="btn btn-primary" style='cursor:pointer'>Sign out</a>-->
     	</div>
 	</div>
 </div>
@@ -216,7 +217,7 @@
 					else if(count==7) completed="85";
 					else if(count==8) completed="90";
                     
-                    $('#congratulation__ID').html("Congratulations! You have already completed "+completed+"% of the questionnaires<br><br>" )
+                    $('#congratulation__ID').html("Congratulations! You have completed "+completed+"% of the questionnaires<br><br>" )
 					$li.removeClass('li_not_allowed__ID')
 					$li.addClass('li_allowed__ID')
 		            var task_name=$li.html();
