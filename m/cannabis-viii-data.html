@@ -12,26 +12,6 @@
             var fields="Participant_uid,har_effect,har_source_other,har_symptoms_other,har_source_a,har_source_b,har_source_c,har_source_d,har_source_e,har_source_f,har_source_g,har_source_h,har_symptoms_a,har_symptoms_b,har_symptoms_c,har_symptoms_d,har_symptoms_e,har_symptoms_f,har_symptoms_g,har_symptoms_h,har_symptoms_i,har_symptoms_j,har_symptoms_k,har_symptoms_l,har_symptoms_m,har_symptoms_n,har_symptoms_o,har_symptoms_p,har_symptoms_q,har_symptoms_r";
             m.fields="_Form,"+fields+",Submit_date,Submitted_by,_Delete";
             //-------------------------------------
-            m.cell_render=function(records,I,field,td,set_value,source){
-                switch(field){
-                    case '_Report':
-                        //MongoDB
-                        td.html("<u style='cursor:pointer'>Add/Modify Report</u>");
-                        td.find('u').on('click',function(){
-                            var db=""; if(window.location.toString().indexOf('tb=demo')!=-1) db="&tb=demo";
-                            var d="";  if(window.location.toString().indexOf('_d=1')!=-1) d="&_d=1";
-                            var p="";  if(window.location.toString().indexOf('_p=1')!=-1) p="&_p=1";
-                            var u="?username="+records[I].UID+"&password="+records[I].Data._Password;
-                            //console.log(JSON.stringify(m.report))
-                            var q_url=m.report.replace('$H',$vm.hosting_path)+u+db+d+p+"&_e=1";
-    						window.open(q_url);
-                        });
-                        break;
-                    case '_Login_ID':
-                        td.html(records[I].UID);
-                        break;
-                }
-            }
         }
     </script>
     <style>

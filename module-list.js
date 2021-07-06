@@ -10,17 +10,17 @@
         "panel-export-week8":    {url:"$H/m/panel-export-week8.html",router:1},
         "panel-export-week10":    {url:"$H/m/panel-export-week10.html",router:1},
         "panel-export-exit":    {url:"$H/m/panel-export-exit.html",router:1},
-        "export-data-hush": {url:"$H/m/export-data.html",Table:"canact-export",form_module:"export-form-hush"},
-        "export-form-hush": {url:"$H/m/export-form.html",Table:"canact-export"},
+        "export-data-canact": {url:"$H/m/export-data.html",Table:"canact-export",form_module:"export-form-canact"},
+        "export-form-canact": {url:"$H/m/export-form.html",Table:"canact-export"},
         
         "participant-data":   		{url:"$H/m/survey-data.html",Table:"canact-survey",form_module:"participant-form",router:1,
                                             child_panel:"panel-child",
-                                            questionnaire_setup:"online-questionnaire-setup-hush",
-                                            online_questionnaire:"online-questionnaire-app-hush"
+                                            questionnaire_setup:"online-questionnaire-setup-canact",
+                                            online_questionnaire:"online-questionnaire-app-canact"
                                         },                                    
         "participant-form":   		{url:"$H/m/survey-form.html",Table:"canact-survey"},
 
-        "survey-data": {url:"$H/m/survey-data.html",Table:"canact-survey",form_module:"survey-form",report:"$H/oq.html",router:1},
+        "survey-data": {url:"$H/m/survey-data.html",Table:"canact-survey",form_module:"survey-form",report:"$H/oq.html"},
         "survey-form": {url:"$H/m/survey-form.html",Table:"canact-survey",report:"$H/oq.html",router:1},
         "not_elig": {url:"$H/m/not_elig.html"},
         "report-form": {url:"$H/m/report-form.html",Table:"canact-report",task_name:"Report Details"},
@@ -49,9 +49,9 @@
         $vm.module_list[p]=modules[p];
         $vm.module_list[p].url=$vm.module_list[p].url.replace('$H',$vm.hosting_path);
     }
-    //if(window.location.toString().indexOf('tb=demo')!=-1){
+    if(window.location.toString().indexOf('tb=demo')!=-1){
         for(p in $vm.module_list){
             $vm.module_list[p].Table="demo-"+$vm.module_list[p].Table;
         }
-    //}
+    }
 })();

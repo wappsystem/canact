@@ -12,26 +12,6 @@
             var fields="Participant_uid,cult_duration,cult_plants_grow,cult_plants_harvest,cult_plants_other,cult_plants_spent,cult_source_e,cult_source_other,cult_form_a,cult_form_other,cult_grow,cult_grow_other,cult_roots,cult_roots_other,cult_use_a,cult_use_b,cult_use_c,cult_use_d,cult_use_e,cult_use_f,cult_use_g,cult_use_other_h,cult_use_h,cult_convert_d,cult_convert_other,cult_reason_b,cult_reason_other,cult_think_thc_cbd,cult_like_thc_cbd,cult_contaminants,cult_grow_prev_other,cult_stopped,cult_stopped_other,cult_source_a,cult_source_b,cult_source_c,cult_source_d,cult_source_f,cult_source_g,cult_source_h,cult_source_i,cult_form_b,cult_form_c,cult_form_d,cult_form_e,cult_form_f,cult_convert_a,cult_convert_b,cult_convert_c,cult_convert_e,cult_convert_f,cult_convert_g,cult_convert_h,cult_convert_i,cult_reason_a,cult_reason_c,cult_reason_d,cult_reason_e,cult_reason_f,cult_reason_g,cult_reason_h,cult_reason_i,cult_reason_j,cult_reason_k,cult_reason_l,cult_reason_m,cult_reason_n,cult_reason_o,cult_reason_p,cult_grow_prev_a,cult_grow_prev_b,cult_grow_prev_c,cult_grow_prev_d,cult_grow_prev_e,cult_grow_prev_f,cult_grow_prev_g,cult_grow_prev_h,cult_grow_prev_i,cult_grow_prev_j,cult_grow_prev_k,cult_grow_prev_l,cult_grow_prev_m,cult_grow_prev_n,cult_grow_prev_o,cult_grow_prev_p,cult_grow_prev_q";
             m.fields="_Form,"+fields+",Submit_date,Submitted_by,_Delete";
             //-------------------------------------
-            m.cell_render=function(records,I,field,td,set_value,source){
-                switch(field){
-                    case '_Report':
-                        //MongoDB
-                        td.html("<u style='cursor:pointer'>Add/Modify Report</u>");
-                        td.find('u').on('click',function(){
-                            var db=""; if(window.location.toString().indexOf('tb=demo')!=-1) db="&tb=demo";
-                            var d="";  if(window.location.toString().indexOf('_d=1')!=-1) d="&_d=1";
-                            var p="";  if(window.location.toString().indexOf('_p=1')!=-1) p="&_p=1";
-                            var u="?username="+records[I].UID+"&password="+records[I].Data._Password;
-                            //console.log(JSON.stringify(m.report))
-                            var q_url=m.report.replace('$H',$vm.hosting_path)+u+db+d+p+"&_e=1";
-    						window.open(q_url);
-                        });
-                        break;
-                    case '_Login_ID':
-                        td.html(records[I].UID);
-                        break;
-                }
-            }
         }
     </script>
     <style>
