@@ -33,7 +33,7 @@
         "cannabis-v-data": {url:"$H/m/cannabis-v-data.html",Table:"canact-cannabis-v",form_module:"cannabis-v-form",task_name:"V. PRESCRIBED MEDICINAL CANNABIS  ",router:1},
         "cannabis-vi-data": {url:"$H/m/cannabis-vi-data.html",Table:"canact-cannabis-vi",form_module:"cannabis-vi-form",task_name:"VI. NON-PRESCRIBED MEDICINAL CANNABIS  ",router:1},
         "cannabis-vii-data": {url:"$H/m/cannabis-vii-data.html",Table:"canact-cannabis-vii",form_module:"cannabis-vii-form",task_name:"VII. RECREATIONAL CANNABIS  ",router:1},
-        "cannabis-viii-data": {url:"$H/m/cannabis-viii-data.html",Table:"canact-cannabis-viii",form_module:"cannabis-viii-form",task_name:"VIII. UNEXPECTED ADVERSE EFFECTS  ",router:1},
+        "cannabis-viii-data": {url:"$H/m/cannabis-viii-data.html",Table:"canact-cannabis-viii",form_module:"cannabis-viii-form",task_name:"VIII. ADVERSE EFFECTS  ",router:1},
         "cannabis-ix-data": {url:"$H/m/cannabis-ix-data.html",Table:"canact-cannabis-xi",form_module:"cannabis-ix-form",task_name:"XI. LEGISLATION ",router:1},
         "cannabis-ii-form": {url:"$H/m/cannabis-ii-form.html",Table:"canact-cannabis-ii",task_name:"II. PREVIOUS AND CURRENT CANNABIS USE"},
         "cannabis-iii-form": {url:"$H/m/cannabis-iii-form.html",Table:"canact-cannabis-iii",task_name:"III. CANNABIS CULTIVATION"},
@@ -41,7 +41,7 @@
         "cannabis-v-form": {url:"$H/m/cannabis-v-form.html",Table:"canact-cannabis-v",task_name:"V. PRESCRIBED MEDICINAL CANNABIS  "},
         "cannabis-vi-form": {url:"$H/m/cannabis-vi-form.html",Table:"canact-cannabis-vi",task_name:"VI. NON-PRESCRIBED MEDICINAL CANNABIS  "},
         "cannabis-vii-form": {url:"$H/m/cannabis-vii-form.html",Table:"canact-cannabis-vii",task_name:"VII. RECREATIONAL CANNABIS  "},
-        "cannabis-viii-form": {url:"$H/m/cannabis-viii-form.html",Table:"canact-cannabis-viii",task_name:"VIII. UNEXPECTED ADVERSE EFFECTS  "},
+        "cannabis-viii-form": {url:"$H/m/cannabis-viii-form.html",Table:"canact-cannabis-viii",task_name:"VIII. ADVERSE EFFECTS  "},
         "cannabis-ix-form": {url:"$H/m/cannabis-ix-form.html",Table:"canact-cannabis-xi",task_name:"XI. LEGISLATION "},
 
     }

@@ -37,12 +37,11 @@
                                     <option value=''></option>
                                     <option value='1'>Less than one year</option>
                                     <option value='2'>Since the legislative change (January 31st 2020)</option>
-                                    <option value='3'>Less than two years</option>
-                                    <option value='4'>2-5 years</option>
-                                    <option value='5'>6-10 years</option>
-                                    <option value='6'>11-20 years</option>
-                                    <option value='7'>21+ years</option>
-                                    <option value='8'>I no longer grow cannabis, but I used to</option>
+                                    <option value='3'>2-5 years</option>
+                                    <option value='4'>6-10 years</option>
+                                    <option value='5'>11-20 years</option>
+                                    <option value='6'>21+ years</option>
+                                    <option value='7'>I no longer grow cannabis, but I used to</option>
                                 </select>
                             </label><br>
                         </fieldset>
@@ -74,8 +73,8 @@
                                 <div class="form-group">
                                     <div class="questiongroup ">
                                         <fieldset class=""><span class=""></span>
-                                            <label ><span class="">Approximately, how many grams of DRIED cannabis was yielded from your successful harvest?<br>If you do not know, please enter '-1'</span>
-                                                <input class="form-control" type="number" min=-1 name="cult_plants_other" placeholder="grams" required >
+                                            <label ><span class="">How many grams of DRIED cannabis was typically harvested from each cannabis plant?<br><label>If you do not know, please enter '-1'</label></span>
+                                                <input class="form-control" type="number" min=-1 name="cult_plants_dried" placeholder="grams" required >
                                             </label><br>
                                         </fieldset>
                                     </div>
@@ -83,8 +82,26 @@
                                 <div class="form-group">
                                     <div class="questiongroup ">
                                         <fieldset class=""><span class=""></span>
-                                            <label ><span class="">How much money have you spent sourcing cannabis seeds/cuttings/juveniles to grow yourself?</span>
-                                                <input class="form-control" type="number" min=0 name="cult_plants_spent" placeholder="AUD" required >
+                                            <label ><span class="">How many grams of FRESH cannabis was typically harvested from each cannabis plant?<br><label>If you do not know, please enter '-1'</label></span>
+                                                <input class="form-control" type="number" min=-1 name="cult_plants_fresh" placeholder="grams" required >
+                                            </label><br>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="questiongroup ">
+                                        <fieldset class=""><span class=""></span>
+                                            <label ><span class="">How much money have you spent on horticultural equipment (e.g., lights) or fertilisers to benefit cannabis plant growth? <br><label>If you do not know, please enter '-1'</label></span>
+                                                <input class="form-control" type="number" min=-1 name="cult_plants_spent_equipment" placeholder="AUD" required >
+                                            </label><br>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="questiongroup ">
+                                        <fieldset class=""><span class=""></span>
+                                            <label ><span class="">How much money have you spent sourcing cannabis seeds/cuttings/juveniles to grow yourself?<br><label>If you do not know, please enter '-1'</label></span>
+                                                <input class="form-control" type="number" min=-1 name="cult_plants_spent_seeds" placeholder="AUD" required >
                                             </label><br>
                                         </fieldset>
                                     </div>
@@ -232,6 +249,29 @@
                     </div>
                     <div class="form-group">
                         <div class="questiongroup ">
+                            <fieldset class="subquestions">
+                                <label><span class="">What medium are your cannabis roots mostly suspended in?</span>
+                                    <select name="cult_fertilisers" class=form-control required>
+                                        <option value=''></option>
+                                        <option value='1'>Yes, organic products only</option>
+                                        <option value='2'>Yes, chemical products only</option>
+                                        <option value='3'>Yes, both organic and chemical products</option>
+                                        <option value='4'>Other</option>
+                                        <option value='5'>I don’t use any insecticides, herbicides, fertilisers or growth promotants on my cannabis</option>
+                                    </select>
+                                </label><br>
+                            </fieldset>
+                            <div id=cult_fertilisers__ID style='display:none'>
+                                <fieldset class="subquestions">
+                                    <label ><span class="">Please specify</span>
+                                        <input class="form-control" type="text" name="cult_fertilisers_other" placeholder="Please specify" >
+                                    </label><br>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="questiongroup ">
                             <fieldset class=""><span class=""></span>
                                 <label >
                                     <span class="">The following questions ask about how you use or share your home-grown cannabis.<br><br>
@@ -242,6 +282,19 @@
                                 </label><br>
                                 <div class="form-group">
                                     <div class="questiongroup ">
+                                        <fieldset class="subquestions">
+                                            <label><span class="">Do you share cannabis seeds/seedlings/plants with family, friends or other growers?</span>
+                                                <select name="cult_share" class=form-control required>
+                                                    <option value=''></option>
+                                                    <option value='1'>Yes</option>
+                                                    <option value='2'>No</option>
+                                                </select>
+                                            </label><br>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="questiongroup ">
                                         <fieldset class=""><span class=""></span>
                                             <label ><span class="">Consume myself for medicinal purpose</span>
                                                 <input class="form-control" type="number" min=0 max=100 name="cult_use_a" placeholder="%"  >
@@ -249,7 +302,7 @@
                                             <label ><span class="">Consume myself for non-medicinal purpose</span>
                                                 <input class="form-control" type="number" min=0 max=100 name="cult_use_b" placeholder="%"  >
                                             </label><br>
-                                            <label ><span class="">Given to family or friends for medical purpose</span>
+                                            <label ><span class="">Given to family or friends for medicinal purpose</span>
                                                 <input class="form-control" type="number" min=0 max=100 name="cult_use_c" placeholder="%"  >
                                             </label><br>
                                             <label ><span class="">Given to family or friends for non-medicinal use</span>
@@ -294,22 +347,26 @@
                                  </label><br>
                                  <label class="checkboxes">
                                     <input type="checkbox" name="cult_convert_d">
-                                    <span class="check_checkmark"></span>Cannabis butter (to be used for food or drink) or cooked with</span>
+                                    <span class="check_checkmark"></span>Cannabis oil (to be applied topically)</span>
                                  </label><br>
                                  <label class="checkboxes">
                                     <input type="checkbox" name="cult_convert_e">
-                                    <span class="check_checkmark"></span>Cannabis sweets</span>
+                                    <span class="check_checkmark"></span>Cannabis butter (to be used for food or drink) or cooked with</span>
                                  </label><br>
                                  <label class="checkboxes">
                                     <input type="checkbox" name="cult_convert_f">
-                                    <span class="check_checkmark"></span>Hashish</span>
+                                    <span class="check_checkmark"></span>Cannabis sweets</span>
                                  </label><br>
                                  <label class="checkboxes">
                                     <input type="checkbox" name="cult_convert_g">
-                                    <span class="check_checkmark"></span>Dissolved into drinks</span>
+                                    <span class="check_checkmark"></span>Hashish</span>
                                  </label><br>
                                  <label class="checkboxes">
                                     <input type="checkbox" name="cult_convert_h">
+                                    <span class="check_checkmark"></span>Dissolved into drinks</span>
+                                 </label><br>
+                                 <label class="checkboxes">
+                                    <input type="checkbox" name="cult_convert_i">
                                     <span class="check_checkmark"></span>Other</span>
                                  </label><br>
                             </fieldset>
@@ -322,7 +379,7 @@
                             </div>
                             <fieldset>
                                 <label class="checkboxes">
-                                    <input type="checkbox" name="cult_convert_i">
+                                    <input type="checkbox" name="cult_convert_j">
                                     <span class="check_checkmark"></span>No, I have never processed cannabis into another form</span>
                                 </label><br>
                              </fieldset>
@@ -408,6 +465,64 @@
                     </div>
                     <div class="form-group">
                         <div class="questiongroup ">
+                            <fieldset class="">
+                                <label><span class="">Have you encountered any of the following challenges when cultivating cannabis? Select all that apply.</span></label><br>
+                                <label class="checkboxes">
+                                    <input type="checkbox" name="cult_challenges_a">
+                                    <span class="check_checkmark"></span>Mould (e.g., leaf spot)</span>
+                                 </label><br>
+                                 <label class="checkboxes">
+                                    <input type="checkbox" name="cult_challenges_b">
+                                    <span class="check_checkmark"></span>Rotting</span>
+                                 </label><br>
+                                 <label class="checkboxes">
+                                    <input type="checkbox" name="cult_challenges_c">
+                                    <span class="check_checkmark"></span>Spider mites</span>
+                                 </label><br>
+                                 <label class="checkboxes">
+                                    <input type="checkbox" name="cult_challenges_d">
+                                    <span class="check_checkmark"></span>Aphids of other soft-bodied pests</span>
+                                 </label><br>
+                                 <label class="checkboxes">
+                                    <input type="checkbox" name="cult_challenges_e">
+                                    <span class="check_checkmark"></span>Root problems</span>
+                                 </label><br>
+                                 <label class="checkboxes">
+                                    <input type="checkbox" name="cult_challenges_f">
+                                    <span class="check_checkmark"></span>Nutrient deficiency</span>
+                                 </label><br>
+                                 <label class="checkboxes">
+                                    <input type="checkbox" name="cult_challenges_g">
+                                    <span class="check_checkmark"></span>Plants failing to thrive outdoors</span>
+                                 </label><br>
+                                 <label class="checkboxes">
+                                    <input type="checkbox" name="cult_challenges_h">
+                                    <span class="check_checkmark"></span>Plants failing to thrive indoors</span>
+                                 </label><br>
+                                 <label class="checkboxes">
+                                    <input type="checkbox" name="cult_challenges_i">
+                                    <span class="check_checkmark"></span>Security issues (e.g., theft of a plant)</span>
+                                 </label><br>
+                                 <label class="checkboxes">
+                                    <input type="checkbox" name="cult_challenges_j">
+                                    <span class="check_checkmark"></span>Arrest or seizure of plant by police</span>
+                                 </label><br>
+                                 <label class="checkboxes">
+                                    <input type="checkbox" name="cult_challenges_k">
+                                    <span class="check_checkmark"></span>Other</span>
+                                 </label><br>
+                            </fieldset>
+                            <div id=cult_challenges_other__ID style='display:none'>
+                                <fieldset class="subquestions">
+                                    <label ><span class="">Please specify</span>
+                                        <input class="form-control" type="text" name="cult_challenges_other" placeholder="Please specify" >
+                                    </label><br>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="questiongroup ">
                             <fieldset class="subquestions">
                                 <label><span class=""><b>The two best-known and most abundant cannabinoids are tetrahydrocannabinol (THC) and cannabidiol (CBD).</b>
                                     <br><br>
@@ -419,7 +534,20 @@
                     <div class="form-group">
                         <div class="questiongroup ">
                             <fieldset class="subquestions">
-                                <label><span class="">Which cannabinoid/s do you THINK your home-grown cannabis is highest in?</span>
+                                <label><span class="">Have you intentionally sourced cannabis seeds/seedlings/cuttings/plants because of the specified cannabinoid levels?</span>
+                                    <select name="cult_can_level" class=form-control required>
+                                        <option value=''></option>
+                                        <option value='1'>Yes</option>
+                                        <option value='2'>No</option>
+                                    </select>
+                                </label><br>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="questiongroup ">
+                            <fieldset class="subquestions">
+                                <label><span class="">Which cannabinoid/s do you THINK your main home-grown cannabis is highest in?<br><label>Please refer to the cannabis plant that best fulfills your reason/s for growing, and/or you wish to have analysed for cannabinoid and contaminant content.</label></span>
                                     <select name="cult_think_thc_cbd" class=form-control >
                                         <option value=''></option>
                                         <option value='1'>THC</option>
@@ -435,7 +563,7 @@
                     <div class="form-group">
                         <div class="questiongroup ">
                             <fieldset class="subquestions">
-                                <label><span class="">Which cannabinoid/s would you LIKE your home-grown cannabis to be highest in?</span>
+                                <label><span class="">Which cannabinoid/s would you LIKE your home-grown cannabis to be highest in?<br><label>Please refer to the cannabis plant that best fulfills your reason/s for growing, and/or you wish to have analysed for cannabinoid and contaminant content.</label></span>
                                     <select name="cult_like_thc_cbd" class=form-control >
                                         <option value=''></option>
                                         <option value='1'>THC</option>
@@ -591,6 +719,8 @@
             m.load=function(){
               load2();
               $('#title__ID').text($vm.module_list[$vm.vm['__ID'].name].task_name);
+                //var a=$vm.serialize('#F__ID')
+                //console.log(JSON.stringify(a))
             }
             //-------------------------------------
             var before_submit=m.before_submit;
@@ -609,6 +739,9 @@
                     $('#cult_q1ag__ID').show();
                     $("select[name='cult_grow']").prop('required', true)
                     $("select[name='cult_roots']").prop('required', true)
+                    $("select[name='cult_fertilisers']").prop('required', true)
+                    $("select[name='cult_share']").prop('required', true)
+                    $("select[name='cult_can_level']").prop('required', true)
                     $("select[name='cult_think_thc_cbd']").prop('required', true)
                     $("select[name='cult_like_thc_cbd']").prop('required', true)
                     $("select[name='cult_contaminants']").prop('required', true)
@@ -616,6 +749,9 @@
                 else{
                     $("select[name='cult_grow']").prop('required', false)
                     $("select[name='cult_roots']").prop('required', false)
+                    $("select[name='cult_fertilisers']").prop('required', false)
+                    $("select[name='cult_share']").prop('required', false)
+                    $("select[name='cult_can_level']").prop('required', false)
                     $("select[name='cult_think_thc_cbd']").prop('required', false)
                     $("select[name='cult_like_thc_cbd']").prop('required', false)
                     $("select[name='cult_contaminants']").prop('required', false)
@@ -660,6 +796,16 @@
                 else{
                     $("input[name='cult_roots_other']").prop('required', false);
                     $('#cult_roots__ID').hide();
+                }
+            })
+            $("select[name='cult_fertilisers']").on('change', function () {
+                if($("select[name='cult_fertilisers']").val()=='4'){
+                    $('#cult_fertilisers__ID').show();
+                    $("input[name='cult_fertilisers_other']").prop('required', true)
+                }
+                else{
+                    $("input[name='cult_fertilisers_other']").prop('required', false);
+                    $('#cult_fertilisers__ID').hide();
                 }
             })
             var total_percent=0;
@@ -720,8 +866,8 @@
                 if(total_percent==100){$('#total_percent__ID').css('color','green')}
                 else $('#total_percent__ID').css('color','red')
             })
-            $("input[name='cult_convert_h']").on('change', function () {
-                if($("input[name='cult_convert_h']:checked").val()=='on'){
+            $("input[name='cult_convert_i']").on('change', function () {
+                if($("input[name='cult_convert_i']:checked").val()=='on'){
                     $('#cult_convert_other__ID').show();
                     $("input[name='cult_convert_other']").prop('required', true)
                 }
@@ -738,6 +884,16 @@
                 else{
                     $("input[name='cult_reason_other']").prop('required', false);
                     $('#cult_reason_other__ID').hide();
+                }
+            })
+            $("input[name='cult_challenges_k']").on('change', function () {
+                if($("input[name='cult_challenges_k']:checked").val()=='on'){
+                    $('#cult_challenges_other__ID').show();
+                    $("input[name='cult_challenges_other']").prop('required', true)
+                }
+                else{
+                    $("input[name='cult_challenges_other']").prop('required', false);
+                    $('#cult_challenges_other__ID').hide();
                 }
             })
             $("select[name='cult_duration']").on('change', function () {

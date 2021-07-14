@@ -89,9 +89,9 @@
                                         <option value=''></option>
                                         <option value='1'>Medicinal only</option>
                                         <option value='2'>Non-medicinal (or recreational) only</option>
-                                        <option value='3'>Both medicinal and non-medicinal (recreational)</option>
+                                        <option value='3'>Both medicinal and non-medicinal (or recreational)</option>
                                         <option value='4'>Previously non-medicinal only, now medicinal only </option>
-                                        <option value='5'>Previously medicinal only, non-medicinal only</option>
+                                        <option value='5'>Previously medicinal only, now non-medicinal only</option>
                                     </select>
                                     </label><br>
                             </fieldset>
@@ -151,7 +151,7 @@
                                 </span>
                                 <select name="can_cultivated" class=form-control required>
                                     <option value=''></option>
-                                    <option value='1'>Yes, I am currently growing cannabis</option>
+                                    <option value='1'>Yes, I have previously, or I am currently growing cannabis</option>
                                     <option value='2'>Yes, but I no longer grow cannabis</option>
                                     <option value='3'>No, I have never grown cannabis</option>
                                 </select>
@@ -175,13 +175,18 @@
             m.load=function(){
               load2();
               $('#title__ID').text($vm.module_list[$vm.vm['__ID'].name].task_name);
+                //var a=$vm.serialize('#F__ID')
+                //console.log(JSON.stringify(a))
             }
             //-------------------------------------
             var before_submit=m.before_submit;
             m.before_submit=function(data,index){
-                if(parseInt($("#F__ID input[name='can_age_first']").val())> parseInt($("#F__ID input[name='can_start_first']").val())){
-                    $vm.alert("The number you entered as the age you started using cannabis REGULARLY is lower than the age you entered as the time you FIRST used cannabis. This doesn’t make sense, please adjust your answers.")
-                    return false;
+                if($("#F__ID input[name='can_start_first']").val()!='0'){
+                    if(parseInt($("#F__ID input[name='can_age_first']").val())> parseInt($("#F__ID input[name='can_start_first']").val())){
+                        $vm.alert("The number you entered as the age you started using cannabis REGULARLY is lower than the age you entered as the time you FIRST used cannabis. This doesn’t make sense, please adjust your answers.")
+                        return false;
+                    }
+                    else return before_submit(data,index);
                 }
                 else return before_submit(data,index);
             }

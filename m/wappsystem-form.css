@@ -50,8 +50,15 @@
 }
 #D__ID label {
     font-family: 'Nunito Sans';
-    font-weight:600;
+    font-weight:400;
     font-size: 14px;
+    color: #444645;
+    line-height: 21px;
+}
+#D__ID label span{
+    font-family: 'Nunito Sans';
+    font-weight:800;
+    font-size: 16px;
     color: #444645;
     line-height: 21px;
 }

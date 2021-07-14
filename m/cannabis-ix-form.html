@@ -30,7 +30,7 @@
                 <div class="form-group">
                     <div class="questiongroup">
                         <fieldset class="">
-                            <label><span class="">1. Please indicate whether you believe the following statements are true or false with respect </span></label>
+                            <label><span class="">Please indicate whether you believe the following statements are true or false with respect to the ACT cannabis laws introduced in January 2020.</span></label>
                         </fieldset>
                     </div>
                 </div>
@@ -95,19 +95,6 @@
                                 <span class="checkmark"></span>True</label>
                             <label class="radiobuttons ">
                                 <input type="radio" name="leg_growing" value="0">
-                                <span class="checkmark"></span>False </label>
-                        </fieldset>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="questiongroup">
-                        <fieldset class="pl-2">
-                            <label><span class="">The prescription medicinal cannabis scheme supports my needs</span></label><br>
-                            <label class="radiobuttons ">
-                                <input type="radio" name="leg_give" value="1" required>
-                                <span class="checkmark"></span>True</label>
-                            <label class="radiobuttons ">
-                                <input type="radio" name="leg_give" value="0">
                                 <span class="checkmark"></span>False </label>
                         </fieldset>
                     </div>
@@ -295,7 +282,7 @@
                 <div class="form-group">
                     <div class="questiongroup">
                         <fieldset class="pl-2">
-                            <label><span class="">Legal regulated cannabis products support my needs</span></label><br>
+                            <label><span class="">The prescription medicinal cannabis scheme supports my needs</span></label><br>
                         </fieldset>
                         <fieldset class="pl-2 subquestions">
                             <label class="radiobuttons ">
@@ -410,6 +397,102 @@
                 <div class="form-group">
                     <div class="questiongroup">
                         <fieldset class="">
+                            <label><span class="">Does roadside testing stop you using cannabis, or THC-containing products? </span></label><br>
+                            <select name="leg_roadside_testing" class=form-control required>
+                                <option value=''></option>
+                                <option value='1'>Not at all</option>
+                                <option value='2'>A little</option>
+                                <option value='3'>Quite a bit</option>
+                                <option value='4'>A great deal</option>
+                                <option value='5'>Other </option>
+                            </select>
+                        </fieldset>
+                        <div id=leg_roadside_testing_other__ID style='display:none'>
+                            <fieldset class="subquestions">
+                                <label><span class="">Please specify</span>
+                                    <input class="form-control" type="text" name="leg_roadside_testing_other"
+                                        placeholder="Please specify">
+                                </label><br>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>    
+                <div class="form-group">
+                    <div class="questiongroup">
+                        <fieldset class="">
+                            <label><span class="">Has cannabis legalisation in the ACT influenced the way you use cannabis?</span></label><br>
+                            <select name="leg_influenced_use" class=form-control required>
+                                <option value=''></option>
+                                <option value='1'>Yes, I use cannabis more</option>
+                                <option value='2'>Yes, I use cannabis less </option>
+                                <option value='3'>No, my cannabis use has not changed</option>
+                                <option value='4'>Other  </option>
+                            </select>
+                        </fieldset>
+                        <div id=leg_influenced_use_other__ID style='display:none'>
+                            <fieldset class="subquestions">
+                                <label><span class="">Please specify</span>
+                                    <input class="form-control" type="text" name="leg_influenced_use_other"
+                                        placeholder="Please specify">
+                                </label><br>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>    
+                <div class="form-group">
+                    <div class="questiongroup">
+                        <fieldset class="">
+                            <label><span class="">Has cannabis legalisation in the ACT influenced your alcohol consumption?</span></label><br>
+                            <select name="leg_influenced_alcohol" class=form-control required>
+                                <option value=''></option>
+                                <option value='1'>Yes, I drink alcohol more</option>
+                                <option value='2'>Yes, I drink alcohol less </option>
+                                <option value='1'>No, my alcohol consumption has not changed</option>
+                                <option value='2'>No, I don’t ever consume alcohol </option>
+                            </select>
+                        </fieldset>
+                    </div>
+                </div>    
+                <div class="form-group">
+                    <div class="questiongroup">
+                        <fieldset class="">
+                            <label><span class="">Has cannabis legalisation in the ACT influenced your consumption of illicit substances</span></label><br>
+                            <select name="leg_influenced_illicit" class=form-control required>
+                                <option value=''></option>
+                                <option value='1'>Yes, I consume illicit substances more</option>
+                                <option value='2'>Yes, I consume illicit substances less</option>
+                                <option value='1'>No, illicit substance consumption has not changed</option>
+                                <option value='2'>No, I don’t ever consume illicit substances</option>
+                            </select>
+                        </fieldset>
+                    </div>
+                </div>    
+                <div class="form-group">
+                    <div class="questiongroup">
+                        <fieldset class="">
+                            <label><span class="">Has cannabis legalisation in the ACT influenced your decisions around cultivating cannabis?</span></label><br>
+                            <select name="leg_cultivating_cannabis" class=form-control required>
+                                <option value=''></option>
+                                <option value='1'>Yes, I grow more plants now</option>
+                                <option value='2'>Yes, I grow less plants now</option>
+                                <option value='3'>No, my cannabis cultivation patterns have not changed</option>
+                                <option value='4'>No, I have never grown cannabis</option>
+                                <option value='5'>Other  </option>
+                            </select>
+                        </fieldset>
+                        <div id=leg_cultivating_cannabis_other__ID style='display:none'>
+                            <fieldset class="subquestions">
+                                <label><span class="">Please specify</span>
+                                    <input class="form-control" type="text" name="leg_cultivating_cannabis_other"
+                                        placeholder="Please specify">
+                                </label><br>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>    
+                <div class="form-group">
+                    <div class="questiongroup">
+                        <fieldset class="">
                             <label><span class="">What do you believe should be the legal limit of cannabis plants for each grower in the ACT?</span></label><br>
                             <select name="leg_limit_plants" class=form-control required>
                                 <option value=''></option>
@@ -478,6 +561,8 @@
             m.load=function(){
               load2();
               $('#title__ID').text($vm.module_list[$vm.vm['__ID'].name].task_name);
+                //var a=$vm.serialize('#F__ID')
+                //console.log(JSON.stringify(a))
             }
             //---------- IX. LEGISLATION  --------------------
             $("select[name='leg_arrested']").on('change', function () {
@@ -490,6 +575,37 @@
                     $("select[name='leg_arrested_related']").prop('required', false)
                 }
             })
+            $("select[name='leg_influenced_use']").on('change', function () {
+                if($("select[name='leg_influenced_use']").val()=='4'){
+                    $('#leg_influenced_use_other__ID').show();
+                    $("input[name='leg_influenced_use_other']").prop('required', true)
+                }
+                else{
+                    $("input[name='leg_influenced_use_other']").prop('required', false)
+                    $('#leg_influenced_use_other__ID').hide();
+                }
+            })
+            $("select[name='leg_cultivating_cannabis']").on('change', function () {
+                if($("select[name='leg_cultivating_cannabis']").val()=='5'){
+                    $('#leg_cultivating_cannabis_other__ID').show();
+                    $("input[name='leg_cultivating_cannabis_other']").prop('required', true)
+                }
+                else{
+                    $("input[name='leg_cultivating_cannabis_other']").prop('required', false)
+                    $('#leg_cultivating_cannabis_other__ID').hide();
+                }
+            })
+            $("select[name='leg_roadside_testing']").on('change', function () {
+                if($("select[name='leg_roadside_testing']").val()=='5'){
+                    $('#leg_roadside_testing_other__ID').show();
+                    $("input[name='leg_roadside_testing_other']").prop('required', true)
+                }
+                else{
+                    $("input[name='leg_roadside_testing_other']").prop('required', false)
+                    $('#leg_roadside_testing_other__ID').hide();
+                }
+            })
+
             //-------------------------------------
         }
     </script>
