@@ -327,18 +327,18 @@
                 </div>
             </div>
             <div id=S3__ID>
-                <div class="row  mr-0 ml-0 p-4 text-center" >
+                <div class="row  mr-0 ml-0 p-4 text-center " >
                     <div class="col">
-                        Please click the link below to start the questionnaire<br><br>
+                        <h4>Please click the link below to start the questionnaire</h4>
                     </div>
                 </div>
                 <div style='max-width:800px;margin-left:auto;margin-right:auto;'>
                     <hr>
                     <div class="text-center">
-                        Thank you for participating in the CAN-ACT Study. You can log out and return to the survey at any point <br><br><br>
+                        Thank you for participating in the CAN-ACT Study. You can log out and return to the survey at any point<br><br>
+                        <i>Please keep note of your user ID (<b><span id=id__ID></span></b>) and password (<b><span id=password__ID></span></b>). As the survey is anonymised, the research team will be unable to locate or reset your login details.</i><br><br>
                         <a id=canact_registration__ID target="_blank" style="color:#000;font-size: 130%;border-radius:5px;padding:5px;background-color: #748A66" ><span style='font-size:1.2rem;font-weight:bold;' id=refnum__ID></span></a>
                         <br><br>
-                        <i>Please keep note of your user ID and password. As the survey is anonymised, the research team will be unable to locate or reset your login details.</i>
                     </div>
                 </div>
             </div>
@@ -379,7 +379,7 @@
                 event.preventDefault();
                 if (current_I == N-1) {
                     console.log(parseInt($("#F__ID input[name='you_age']").val()))
-                    if(parseInt($("#F__ID input[name='you_age']").val())<17 || $("#F__ID input[name='you_live']").val()=='2'){
+                    if(parseInt($("#F__ID input[name='you_age']").val())<17 || $("#F__ID select[name='you_live']").val()=='2'){
                         if(m.prefix==undefined) {$vm.load_module('not_elig','',{});}
                         else $vm.load_module(m.prefix+'not_elig','',{});
                     }
@@ -405,6 +405,8 @@
                 var d="";  if(window.location.toString().indexOf('_d=1')!=-1) d="&_d=1";
                 var p="";  if(window.location.toString().indexOf('_p=1')!=-1) p="&_p=1";
                 var u="?username="+index.result.ops[0].UID+"&password="+$('#F__ID input[name=_Password').val();
+                $('#id__ID').text(index.result.ops[0].UID);
+                $('#password__ID').text($('#F__ID input[name=_Password').val());
                 //console.log(JSON.stringify(m))
                 var q_url=m.report.replace('$H',$vm.hosting_path)+u+db+d+p;
                 $('#refnum__ID').text(q_url);
