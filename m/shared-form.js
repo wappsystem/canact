@@ -1,5 +1,5 @@
 //-------------------------------------
-var participant_name=function(record){ return record.UID;}
+var participant_name=function(record){ return record.UID.toString();}
 //-------------------------------------
 //auto select particpant
 var autocomplete_req_p={cmd:"find",table:$vm.module_list['survey-data'].Table,options:{},skip:0,limit:10}
@@ -10,6 +10,7 @@ var autocomplete_list_p=function(records){
         var obj={};
         if(records[i].Data.Screening_Number!= undefined ) obj.label=records[i].Data.Screening_Number;
         else obj.label=records[i].UID;
+        //console.log(JSON.stringify(records[i]))
         obj['UID']=records[i].UID;
         items.push(obj);
     }

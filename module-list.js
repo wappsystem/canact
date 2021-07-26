@@ -43,6 +43,8 @@
         "cannabis-vii-form": {url:"$H/m/cannabis-vii-form.html",Table:"canact-cannabis-vii",task_name:"VII. RECREATIONAL CANNABIS  "},
         "cannabis-viii-form": {url:"$H/m/cannabis-viii-form.html",Table:"canact-cannabis-viii",task_name:"VIII. ADVERSE EFFECTS  "},
         "cannabis-ix-form": {url:"$H/m/cannabis-ix-form.html",Table:"canact-cannabis-xi",task_name:"XI. LEGISLATION "},
+        "lab-data": {url:"$H/m/lab-data.html",Table:"canact-lab",form_module:"lab-form",task_name:"Lab Status",router:1},
+        "lab-form": {url:"$H/m/lab-form.html",Table:"canact-lab",task_name:"Lab Status"},
 
     }
     for(p in modules){
