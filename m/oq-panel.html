@@ -255,13 +255,7 @@
 		                var m=$(this).attr('m');
                         var record=$vm.vm['__ID'].input.record;
                         console.log("record: "+JSON.stringify(record))
-
-						var wait1=function(){$vm.load_module(m,'',{participant_record:record,goback:1})};
-                        var I=0; var loop_1=setInterval(function (){
-                            if($vm.lab!=undefined){  clearInterval(loop_1); wait1(); }
-                            I++; if(I>50){ clearInterval(loop_1); alert("Failed to load form"); }
-                        },100);
-
+						$vm.load_module(m,'',{participant_record:record,goback:1})
 		            });
 		            return false; // break out the loop
 		        }
@@ -269,7 +263,12 @@
                     console.log("ABCABC")
                     var record=$vm.vm['__ID'].input.record;
                     console.log("record: "+JSON.stringify(record))
-                    $vm.load_module(m,'',{lab:lab,participant_record:record,goback:1});
+                    var wait1=function(){$vm.load_module(m,'',{lab:lab,participant_record:record,goback:1})};
+                    var I=0; var loop_1=setInterval(function (){
+                        console.log("wait: "+I)
+                        if($vm.lab!=undefined){  clearInterval(loop_1); wait1(); }
+                        I++; if(I>50){ clearInterval(loop_1); alert("Failed to load form"); }
+                    },100);                    
                     console.log(m+"XXXXX")
                 }
                 else{
