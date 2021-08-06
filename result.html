@@ -18,7 +18,7 @@
     </body>
     <script boot-up>
         //------------------------------------
-        $vm={};$vm.ver=[0.15,0.15]; //increase ver[0] if any module changed, increase ver[1] if vm.js changed
+        $vm={};$vm.ver=[0.16,0.16]; //increase ver[0] if any module changed, increase ver[1] if vm.js changed
         $vm.debug=1;
         //------------------------------------
         //setup modules location
@@ -34,7 +34,7 @@
         //modules used immediately
         $vm.module_list={
             //you can add modules here directly
-            "home":	        {url:"$H/0-result/home.html"},
+            "home":	        {url:"$H/0-result/home.html",router:1},
             "app":	        {url:"$H/0-result/app.html"},
             "header":	    {url:"$H/0-result/header.html"},
             "footer":	    {url:"$H/0-result/footer.html"},

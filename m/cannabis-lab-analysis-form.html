@@ -1,0 +1,106 @@
+<div id=D__ID>
+    <div class='container p-4' style='max-width:800px;margin-left:auto;margin-right:auto;background-color:rgb(250,250,234,0.94);border-radius:20px'>
+        <form id=F__ID>
+            <div id=S10__ID>
+                <!-- participant part for all tsak forms -------------------->
+                <div id="participant_div__ID" >
+                    <div class="row px-4">
+                        <div class="col-sm-12 col-lg-3">
+                            <span class=label__ID>Participant ID</span><br>
+                            <input type=text name="Participant_uid" class=form-control readonly />
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <div id=lab_result__ID >
+                    <div class="form-group">
+                        <div class="questiongroup ">
+                            <fieldset class="">
+                                <label><span class="">Status</span></label><br>
+                                <label class="checkboxes">
+                                    <input type="checkbox" name="lab_not_received">
+                                    <span class="check_checkmark"></span>Sample not yet received by the University of Sydney</span>
+                                </label><br>
+                                <label class="checkboxes">
+                                    <input type="checkbox" name="lab_received">
+                                    <span class="check_checkmark"></span>Sample received by University of Sydney</span>
+                                 </label><br>
+                                <label class="checkboxes">
+                                    <input type="checkbox" name="lab_can_analysis">
+                                    <span class="check_checkmark"></span>Sample analysis (cannabinoid &amp; terpenoid) in progress</span>
+                                 </label><br>
+                                 <label class="checkboxes">
+                                    <input type="checkbox" name="lab_cont_analysis">
+                                    <span class="check_checkmark"></span>Sample analysis (contaminant) in progress</span>
+                                 </label><br>
+                                 <label class="checkboxes">
+                                    <input type="checkbox" name="lab_result_pending">
+                                    <span class="check_checkmark"></span>Sample analysis results pending</span>
+                                 </label><br>
+                                 <label class="checkboxes">
+                                    <input type="checkbox" name="lab_result_available">
+                                    <span class="check_checkmark"></span>Sample analysis results available</span>
+                                 </label><br>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="questiongroup ">
+                            <fieldset class="">
+                                <label style="width:100%"><span class="">Result</span>
+                                    <textarea class="form-control" name="Result_A" ></textarea>
+                                </label>
+                            </fieldset>
+                        </div>
+                    </div>    
+                </div>                    
+                <div class="form-group">
+                    <div class="questiongroup">
+                        <fieldset class="pl-2">
+                            <label><span class="">I would like a free and completely anonymous content analysis of my cannabis</span></label><br>
+                            <label class="radiobuttons ">
+                                <input type="radio" name="lab_analysis" value="1" required>
+                                <span class="checkmark"></span>Yes</label>
+                            <label class="radiobuttons ">
+                                <input type="radio" name="lab_analysis" value="0">
+                                <span class="checkmark"></span>No </label>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+            <button id=submit__ID type="submit" d=1 style="border-radius:2rem;background-color: #748A66;width:180px;height:60px;font-family: Arial, Helvetica, sans-serif" class="btn btn-success btn-lg">Submit</button>
+        </form>
+    </div>
+    <script>
+        function F__ID(){
+            //-------------------------------------
+            VmInclude:'__COMPONENT__/f/form.01.js'
+            VmInclude:__CURRENT_PATH__/shared-form.js
+            //-------------------------------------
+            var load2=m.load;
+            m.load=function(){
+                load2();
+                
+                $('#title__ID').text($vm.module_list[$vm.vm['__ID'].name].task_name);
+                console.log(JSON.stringify(m.input.participant_record))
+                console.log(JSON.stringify(m.input.lab))
+                if(m.input!=undefined) $vm.deserialize(m.input.lab,'#F__ID');
+                if(m.input.lab.Data.lab_analysis=="1"){
+                    $('#submit__ID').hide();
+                    $('#lab_result__ID').show();
+                }
+                $('#Participant__ID').val(m.input.participant_record.UID);
+                $('#D__ID input[name=Participant_uid]').val(m.input.participant_record.UID);
+                $('#Participant__ID').attr('readonly', true);
+                $('#Participant__ID').addClass('input-disabled');
+            }
+            //-------------------------------------
+        }
+    </script>
+    <style>
+        #D__ID .mt-95 {
+        max-width:600px;
+    }
+      VmInclude:__CURRENT_PATH__/wappsystem-form.css
+    </style>
+  </div>

@@ -36,7 +36,7 @@
 		})
 		//--------------------------------------------------------
 		$('#D__ID').on('show',function(){
-			id_list="cannabis-ii-form,cannabis-iii-form,cannabis-iv-form,cannabis-v-form,cannabis-vi-form,cannabis-vii-form,cannabis-viii-form,cannabis-ix-form";
+			id_list="cannabis-ii-form,cannabis-iii-form,cannabis-iv-form,cannabis-v-form,cannabis-vi-form,cannabis-vii-form,cannabis-viii-form,cannabis-ix-form,cannabis-lab-form";
             if(id_list==undefined){
                 alert("No questionnaire was found");
                 return;
@@ -78,6 +78,7 @@
 			var count=0;
 			var tot_count=0;
 			var quest=false;
+            var lab;
 		    //----------------------------------
 		    for(var i=0;i<ids.length;i++){
 				var m=ids[i];
@@ -99,8 +100,13 @@
 				tot_count++;
 		        var $li=$(this);
 				$li.removeClass('li_allowed__ID')
-				$li.addClass('li_not_allowed__ID')
-			})
+                if(tot_count==9){
+    				$li.addClass('li_not_show__ID')
+                }
+                else{
+                    $li.addClass('li_not_allowed__ID')
+                }
+            })
 			//----------------------------------
 			$('#items__ID li').each(function(){
 		        var $li=$(this);
@@ -117,6 +123,9 @@
                         }
                         else{
                             status[m].rid=1;
+                            if(m=='cannabis-lab-form'){
+                                lab=res.result[0];
+                            }
                         }
                     })
                     jQuery.ajaxSetup({async:true});
@@ -192,7 +201,7 @@
                     }
                 }
                 if(count==5){
-                    console.log("2-"+m)
+                    console.log("5-"+m)
                     if(cannabis_ii.Data.can_current_use=='2' || cannabis_ii.Data.can_current_use=='3' || cannabis_ii.Data.can_current_use=='4' || cannabis_ii.Data.can_current_use=='5'  || cannabis_ii.Data.can_previous_use=='2'|| cannabis_ii.Data.can_previous_use=='3' ){
                         console.log("E")
                     }
@@ -204,6 +213,20 @@
                         //return false;
                     }
                 }
+                if(count==8){
+                    console.log("8-"+m)
+                    if(cannabis_ii.Data.can_use=='1' || cannabis_ii.Data.can_use=='2' || cannabis_ii.Data.can_cultivated=='1' || cannabis_ii.Data.can_cultivated=='2' ){
+                        console.log("G")
+                    }
+                    else {
+                        $li.removeClass('li_not_allowed__ID')
+                        $li.addClass('li_not_show__ID')
+                        if(m.prefix==undefined) {$vm.load_module('thank_you','',{});}
+                        else $vm.load_module(m.prefix+'thank_you','',{});
+                        return false;
+                    }
+                }
+
 		        if(status[m].rid==0){
                     console.log("C:"+m)
 					count++;
@@ -219,9 +242,11 @@
 					else if(count==6) completed="80";
 					else if(count==7) completed="85";
 					else if(count==8) completed="90";
+					else if(count==9) completed="100";
                     
                     $('#congratulation__ID').html("Congratulations! You have completed "+completed+"% of the questionnaires<br><br>" )
 					$li.removeClass('li_not_allowed__ID')
+					$li.removeClass('li_not_show__ID')
 					$li.addClass('li_allowed__ID')
 		            var task_name=$li.html();
 		            var module=$li.attr('m');
@@ -234,19 +259,20 @@
 		            });
 		            return false; // break out the loop
 		        }
-				else{
-                    console.log("D Count: "+count)
-					count++;
-					if(count==ids.length && quest==false){
-						$vm.load_module('report','',{goback:1});
-					}
-
-				}
+                else if(m=='cannabis-lab-form' || status['cannabis-lab-form'].rid==1 ){
+                    console.log("ABCABC")
+                    var record=$vm.vm['__ID'].input.record;
+                    console.log("record: "+JSON.stringify(record))
+                    $vm.load_module(m,'',{lab:lab,participant_record:record,goback:1});
+                }
+                else{
+                    console.log(m+"XXXXX")
+                    count++;
+                }
 		    })
-		    //----------------------------------
 		}
-		//--------------------------------------------------------
 	}
+	//--------------------------------------------------------
 </script>
 <style>
 	#D__ID{
