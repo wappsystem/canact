@@ -23,7 +23,6 @@
         "survey-data": {url:"$H/m/survey-data.html",Table:"canact-survey",form_module:"survey-form",report:"$H/oq.html"},
         "survey-form": {url:"$H/m/survey-form.html",Table:"canact-survey",report:"$H/oq.html",router:1},
         "not_elig": {url:"$H/m/not_elig.html"},
-        "thank_you": {url:"$H/m/thank_you.html"},
         "report-form": {url:"$H/m/report-form.html",Table:"canact-report",task_name:"Report Details"},
         "report-form-edit": {url:"$H/m/report-form-edit.html",Table:"canact-report",task_name:"Report Details"},
         "report-canact":{url:"$H/oq.html"},
@@ -48,6 +47,7 @@
         "cannabis-lab-analysis-data": {url:"$H/m/cannabis-lab-analysis-data.html",Table:"canact-cannabis-lab",form_module:"cannabis-lab-analysis-form",task_name:"Analysis of your cannabis"},
         "cannabis-lab-analysis-form": {url:"$H/m/cannabis-lab-analysis-form.html",Table:"canact-cannabis-lab",task_name:"Analysis of your cannabis"},
         "cannabis-lab-form": {url:"$H/m/cannabis-lab-form.html",Table:"canact-cannabis-lab",task_name:"Free analysis of your cannabis"},
+        "cannabis-thank-you-form": {url:"$H/m/cannabis-thank-you-form.html",Table:"canact-cannabis-thank-you",task_name:"What are the new cannabis laws in the ACT?"},
 
     }
     for(p in modules){

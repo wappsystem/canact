@@ -33,11 +33,19 @@
             <br>
             For more information, head to the ACT Government Cannabis webpage:  <a href="https://www.act.gov.au/cannabis/home" target="_blank">https://www.act.gov.au/cannabis/home</a>
         </div>
+        <div style="text-align:right;" >
+            <label class="radiobuttons " style="display:none">
+                <input type="radio" name="act_laws" value="1" selected >
+                <span class="checkmark"></span>
+            </label>
+            <button id=submit__ID type="submit" style="border-radius:2rem;background-color: #748A66;width:180px;height:60px;font-family: Arial, Helvetica, sans-serif" class="btn btn-success btn-lg">Next</button>
+        </div>
     </form>
 <script>
     function F__ID() {
         //-------------------------------------
         VmInclude: __COMPONENT__/f/form.01.js
+        VmInclude:__CURRENT_PATH__/shared-form.js
         //-------------------------------------
         m.default_load = m.load;
         m.load = function () {

@@ -36,7 +36,7 @@
 		})
 		//--------------------------------------------------------
 		$('#D__ID').on('show',function(){
-			id_list="cannabis-ii-form,cannabis-iii-form,cannabis-iv-form,cannabis-v-form,cannabis-vi-form,cannabis-vii-form,cannabis-viii-form,cannabis-ix-form,cannabis-lab-form";
+			id_list="cannabis-ii-form,cannabis-iii-form,cannabis-iv-form,cannabis-v-form,cannabis-vi-form,cannabis-vii-form,cannabis-viii-form,cannabis-ix-form,cannabis-thank-you-form,cannabis-lab-form";
             if(id_list==undefined){
                 alert("No questionnaire was found");
                 return;
@@ -100,8 +100,9 @@
 				tot_count++;
 		        var $li=$(this);
 				$li.removeClass('li_allowed__ID')
-                if(tot_count==9){
-    				$li.addClass('li_not_show__ID')
+                if(tot_count==10){
+    				//$li.addClass('li_not_show__ID')
+                    $li.addClass('li_not_allowed__ID')
                 }
                 else{
                     $li.addClass('li_not_allowed__ID')
@@ -144,7 +145,7 @@
                         $li.removeClass('li_not_allowed__ID')
                         $li.addClass('li_not_show__ID')
                         status[m].rid=1;
-                        console.log("B "+m)
+                        console.log("rem B: "+m)
                     }
                 }
                 if(count==2){
@@ -156,7 +157,7 @@
                         $li.removeClass('li_not_allowed__ID')
                         $li.addClass('li_not_show__ID')
                         status[m].rid=1;
-                        console.log("F"+m)
+                        console.log("rem E: "+m)
                         //return false;
                     }
                 }
@@ -170,14 +171,14 @@
                             $li.removeClass('li_not_allowed__ID')
                             $li.addClass('li_not_show__ID')
                             status[m].rid=1;
-                            console.log("BA "+m)
+                            console.log("rem BA: "+m)
                         }
                     }
                     else{
                         $li.removeClass('li_not_allowed__ID')
                             $li.addClass('li_not_show__ID')
                             status[m].rid=1;
-                            console.log("BB "+m)
+                            console.log("rem BB: "+m)
                     }
                 }
                 if(count==4){
@@ -190,14 +191,14 @@
                             $li.removeClass('li_not_allowed__ID')
                             $li.addClass('li_not_show__ID')
                             status[m].rid=1;
-                            console.log("BA "+m)
+                            console.log("rem BA "+m)
                         }
                     }
                     else{
                         $li.removeClass('li_not_allowed__ID')
                             $li.addClass('li_not_show__ID')
                             status[m].rid=1;
-                            console.log("BB "+m)
+                            console.log("rem BB "+m)
                     }
                 }
                 if(count==5){
@@ -209,11 +210,11 @@
                         $li.removeClass('li_not_allowed__ID')
                         $li.addClass('li_not_show__ID')
                         status[m].rid=1;
-                        console.log("F"+m)
+                        console.log("rem F: "+m)
                         //return false;
                     }
                 }
-                if(count==8){
+                if(count==9){
                     console.log("8-"+m)
                     if(cannabis_ii.Data.can_use=='1' || cannabis_ii.Data.can_use=='2' || cannabis_ii.Data.can_cultivated=='1' || cannabis_ii.Data.can_cultivated=='2' ){
                         console.log("G")
@@ -221,8 +222,11 @@
                     else {
                         $li.removeClass('li_not_allowed__ID')
                         $li.addClass('li_not_show__ID')
-                        if(m.prefix==undefined) {$vm.load_module('thank_you','',{});}
-                        else $vm.load_module(m.prefix+'thank_you','',{});
+                        console.log("rem G: "+m)
+                        $('#congratulation__ID').html("Congratulations! You have completed 100% of the questionnaires<br><br>" )
+
+                        //if(m.prefix==undefined) {$vm.load_module('thank_you','',{});}
+                        //else $vm.load_module(m.prefix+'thank_you','',{});
                         return false;
                     }
                 }
@@ -242,7 +246,7 @@
 					else if(count==6) completed="80";
 					else if(count==7) completed="85";
 					else if(count==8) completed="90";
-					else if(count==9) completed="100";
+					else if(count>=9) completed="100";
                     
                     $('#congratulation__ID').html("Congratulations! You have completed "+completed+"% of the questionnaires<br><br>" )
 					$li.removeClass('li_not_allowed__ID')
