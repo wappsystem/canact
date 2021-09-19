@@ -10,8 +10,9 @@
                 </div>
                 <div id=items__ID  class= "text-left ml-5" style="font-size:larger"></div>
                 <h6 class= "">
-                You can pause and re-enter the survey through logging in and out of the platform. <br>
-                Please keep note of your user ID and password. As they survey is anonymised, the research team will be unable to locate or reset your login details. <br>Thank you!<br><br>
+                    You can pause and re-enter the survey through logging in and out of the platform. <br>
+                    Please store your <i>CAN-ACT User ID (<b><span id=id__ID></span></b>) and Password (<b><span id=password__ID></span></b>)</i>. <br><br>
+                    As the survey is anonymised, the research team will be unable to locate or reset your login details.<br>Thank you!<br><br>
                 </h6>
             <!--<a name=signinout onclick="$vm.signout();" class="btn btn-primary" style='cursor:pointer'>Sign out</a>-->
     	</div>
@@ -31,12 +32,15 @@
         var id_list;
         var cannabis_ii=[];
         var cannabis_iv=[];
+        
 		//--------------------------------------------------------
 		$('#D__ID').on('load',function(){
+            $('#id__ID').text($vm.un);
+            $('#password__ID').text($vm.pw);
 		})
 		//--------------------------------------------------------
 		$('#D__ID').on('show',function(){
-			id_list="cannabis-ii-form,cannabis-iii-form,cannabis-iv-form,cannabis-v-form,cannabis-vi-form,cannabis-vii-form,cannabis-viii-form,cannabis-ix-form,cannabis-thank-you-form,cannabis-lab-form";
+			id_list="cannabis-ii-form,cannabis-iii-form,cannabis-iv-form,cannabis-v-form,cannabis-vi-form,cannabis-vii-form,cannabis-viii-form,cannabis-ix-form,cannabis-thank-you-form,cannabis-prelab-i-analysis-form,cannabis-lab-form";
             if(id_list==undefined){
                 alert("No questionnaire was found");
                 return;

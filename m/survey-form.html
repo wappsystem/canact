@@ -15,31 +15,27 @@
                     <div class="form-group">
                         By clicking <u>SUBMIT</u>, I confirm that:<br><br>
                         <ol>
-                        <li>I have read the attached Information Sheet and agree to take part in the following research
-                        project:</li>
-                        <table id=table__ID style='background-color: lightgray;border:1px solid #000000'><tr style='border:1px solid #000000'><td>Title:</td><td>Medicinal Cannabis Use and Cultivation in the Australian Capital
-                            Territory following Legislative Changes (CAN-ACT) Study</td></tr>
-                            <tr><td>Ethics Approval
-                                Number:</td><td>TBC</td></tr>
-                        </table>
-                        <li>I understand that I am being invited to take part because I am an adult living in the
-                        Australian Capital Territory with current or prior experience with using or growing cannabis.</li>
-                        <li>I understand this research project, so far as it affects me. I have had the opportunity to ask
-                        any questions I may have about the project and my participation. My consent is given freely.</li>
-                        <li>Although I understand the purpose of the research project is to understand the influence of the
-                        Australian Capital Territory new legalisation on growing cannabis, it has also been explained
-                        that my involvement may not be of any benefit to me.</li> 
-                        <li>I understand that no personal identifying information will be collected, including IP
-                        addresses.</li>
-                        <li>I understand that the data collected in the project will be made publicly available via
-                        publication in a scientific journal, conference presentation or media.</li>
-                        <li>I have been informed it will not be possible for me to identified in any publicly available
-                            published materials, and that my personal results will not be disclosed.</li>
-                        <li>I understand that while I will have the opportunity to have my cannabis sample analysed,
-                        this is not a required aspect of the study.</li>
-                        <li>I understand that my data will only be used for the purpose of this research project as
-                        specified in the attached Participant Information Sheet.</li>
-                        <li>I am aware that I should keep a copy of the attached Participant Information Sheet</li>
+                        <li>I have read the attached Information Sheet and agree to take part in the following research project:</li>
+                        <table id=table__ID style='background-color: lightgray;border:1px solid #000000'>
+                            <tr style='border:1px solid #000000'>
+                                <td>Title:</td>
+                                <td>Medicinal Cannabis Use and Cultivation in the Australian Capital Territory following Legislative Changes (CAN-ACT) Study</td></tr>
+                            <tr>
+                                <td>Ethics Approval Number:</td>
+                                <td>TBC</td>
+                            </tr>
+                        </table><br>
+                        <li>I understand that I am being invited to take part because I am an adult living in the Australian Capital Territory with current or prior experience with using or growing cannabis.</li><br>
+                        <li>I am 18 years of age or over.</li><br>
+                        <li>I understand that my involvement in this study may not be of any direct benefit to me.</li><br>
+                        <li>I understand that no personal identifying information will be collected, including IP addresses.</li><br>
+                        <li>I understand that the research team will be unable to locate or reset my CAN-ACT User ID and Password.</li><br>
+                        <li>I understand that I am free to withdraw from the study at any point. If I decide to withdraw from the study, I agree that the information collected about me up to the point when I withdraw may continue to be processed.</li><br>
+                        <li>I understand that the overall data collected in the project will be made publicly available via publication in a scientific journal, conference presentation or media. </li><br>
+                        <li>I have been informed it will not be possible for me to identified in any publicly available published materials, and that my personal results will not be disclosed.</li><br>
+                        <li>I understand that my data will only be used for the purpose of this research project as specified in the attached Participant Information Sheet.</li><br>
+                        <li>I understand this research project, so far as it affects me. I have had the opportunity to ask any questions I may have about the project and my participation. My consent is given freely.</li><br>
+                        <li>I am aware that I should keep a copy of the attached Participant Information Sheet.</li><br>
                     </ol>
                     </div>
  <!--                   <div class='text-left'>
@@ -336,7 +332,7 @@
                     <hr>
                     <div class="text-center">
                         Thank you for participating in the CAN-ACT Study. You can log out and return to the survey at any point<br><br>
-                        <i>Please keep note of your user ID (<b><span id=id__ID></span></b>) and password (<b><span id=password__ID></span></b>). As the survey is anonymised, the research team will be unable to locate or reset your login details.</i><br><br>
+                        <i>Please keep note of your CAN-ACT User ID (<b><span id=id__ID></span></b>) and Password (<b><span id=password__ID></span></b>). As the survey is anonymised, the research team will be unable to locate or reset your login details.</i><br><br>
                         <a id=canact_registration__ID target="_blank" style="color:#000;font-size: 130%;border-radius:5px;padding:5px;background-color: #748A66" ><span style='font-size:1.2rem;font-weight:bold;' id=refnum__ID></span></a>
                         <br><br>
                     </div>
@@ -385,7 +381,7 @@
                     }
                     show_section(current_I + 1);
                     $('#F__ID *').removeAttr('disabled');
-                    $('#F__ID input[name=_Password').val($vm.vm_password(8, false));
+                    $('#F__ID input[name=_Password').val(vm_password(8, false));
                     old_submit(event);
                 }
                 else if (current_I == N) {
@@ -418,6 +414,7 @@
                 var hosting=$vm.hosting_path.replace("prescreening","registration")
                 $('#canact_registration__ID').attr("href",hosting)
                 show_section(1);
+
             })
             //---------------------------------------
             $('#F__ID button').on('click', function (event) {
@@ -514,6 +511,26 @@
                     $('#you_hear_other__ID').hide();
                 }
             })
+            //---------------------------------------------
+            var vm_password=function(length, special) {
+                var iteration = 0;
+                var password = "";
+                var randomNumber;
+                if(special == undefined){
+                    var special = false;
+                }
+                while(iteration < length){
+                    randomNumber = (Math.floor((Math.random() * 100)) % 94) + 33;
+                    if(!special){
+                        if ((randomNumber >=33) && (randomNumber <=96)) { continue; }
+                        if ((randomNumber >=123) && (randomNumber <=126)) { continue; }
+                    }
+                    iteration++;
+                    password += String.fromCharCode(randomNumber);
+                }
+                return password;
+            }
+
 
         }
     </script>

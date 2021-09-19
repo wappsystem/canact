@@ -13,7 +13,7 @@
         "export-data-canact": {url:"$H/m/export-data.html",Table:"canact-export",form_module:"export-form-canact"},
         "export-form-canact": {url:"$H/m/export-form.html",Table:"canact-export"},
         
-        "participant-data":   		{url:"$H/m/survey-data.html",Table:"canact-survey",form_module:"participant-form",router:1,
+        "participant-data":   		{url:"$H/m/survey-data.html",Table:"canact-survey",form_module:"participant-form",
                                             child_panel:"panel-child",
                                             questionnaire_setup:"online-questionnaire-setup-canact",
                                             online_questionnaire:"online-questionnaire"
@@ -48,6 +48,8 @@
         "cannabis-lab-analysis-form": {url:"$H/m/cannabis-lab-analysis-form.html",Table:"canact-cannabis-lab",task_name:"Analysis of your cannabis"},
         "cannabis-lab-form": {url:"$H/m/cannabis-lab-form.html",Table:"canact-cannabis-lab",task_name:"Free analysis of your cannabis"},
         "cannabis-thank-you-form": {url:"$H/m/cannabis-thank-you-form.html",Table:"canact-cannabis-thank-you",task_name:"What are the new cannabis laws in the ACT?"},
+        "cannabis-prelab-i-analysis-data": {url:"$H/m/cannabis-prelab-i-analysis-data.html",Table:"canact-cannabis-prelab",form_module:"cannabis-prelab-i-analysis-form",task_name:"Analysis info and Consent"},
+        "cannabis-prelab-i-analysis-form": {url:"$H/m/cannabis-prelab-i-analysis-form.html",Table:"canact-cannabis-prelab",task_name:"CANNABIS SAMPLE ANALYSIS"},
 
     }
     for(p in modules){
