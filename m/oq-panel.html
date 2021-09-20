@@ -11,7 +11,7 @@
                 <div id=items__ID  class= "text-left ml-5" style="font-size:larger"></div>
                 <h6 class= "">
                     You can pause and re-enter the survey through logging in and out of the platform. <br>
-                    Please store your <i>CAN-ACT User ID (<b><span id=id__ID></span></b>) and Password (<b><span id=password__ID></span></b>)</i>. <br><br>
+                    Please take note of your <i>CAN-ACT User ID (<b><span id=id__ID></span></b>) and Password (<b><span id=password__ID></span></b>)</i>. <br><br>
                     As the survey is anonymised, the research team will be unable to locate or reset your login details.<br>Thank you!<br><br>
                 </h6>
             <!--<a name=signinout onclick="$vm.signout();" class="btn btn-primary" style='cursor:pointer'>Sign out</a>-->
@@ -40,6 +40,7 @@
 		})
 		//--------------------------------------------------------
 		$('#D__ID').on('show',function(){
+            console.log("AAAAA")
 			id_list="cannabis-ii-form,cannabis-iii-form,cannabis-iv-form,cannabis-v-form,cannabis-vi-form,cannabis-vii-form,cannabis-viii-form,cannabis-ix-form,cannabis-thank-you-form,cannabis-prelab-i-analysis-form,cannabis-lab-form";
             if(id_list==undefined){
                 alert("No questionnaire was found");
@@ -270,14 +271,14 @@
                 else if(m=='cannabis-lab-form' || status['cannabis-lab-form'].rid==1 ){
                     console.log("ABCABC")
                     var record=$vm.vm['__ID'].input.record;
-                    console.log("record: "+JSON.stringify(record))
+                   // console.log("record: "+JSON.stringify(record))
                     var wait1=function(){$vm.load_module(m,'',{lab:lab,participant_record:record,goback:1})};
                     var I=0; var loop_1=setInterval(function (){
                         console.log("wait: "+I)
                         if($vm.lab!=undefined){  clearInterval(loop_1); wait1(); }
                         I++; if(I>50){ clearInterval(loop_1); alert("Failed to load form"); }
                     },100);                    
-                    console.log(m+"XXXXX")
+                    //console.log(m+"XXXXX")
                 }
                 else{
                     count++;
