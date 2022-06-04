@@ -108,13 +108,13 @@
                                 </select>
                             </label><br>
                         </fieldset>
-                        <div id=you_gender_other__ID style='display:none'>
+                        <!--<div id=you_gender_other__ID style='display:none'>
                             <fieldset class="subquestions">
                                 <label ><span class="">Please specify</span>
                                     <input class="form-control" type="text" name="you_gender_other" placeholder="Please specify" >
                                 </label><br>
                             </fieldset>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
                 <div class="form-group">
@@ -128,17 +128,17 @@
                                     <option value='3'>Trade or Vocational training (e.g., TAFE or college)</option>
                                     <option value='4'>Undergraduate University degree (e.g., Bachelors, Honours)</option>
                                     <option value='5'>Postgraduate University degree (e.g., Masters, PhD)</option>
-                                    <option value='6'>Other</option>
+                                    <!--<option value='6'>Other</option>-->
                                 </select>
                             </label><br>
                         </fieldset>
-                        <div id=you_education_other__ID style='display:none'>
+                        <!--<div id=you_education_other__ID style='display:none'>
                             <fieldset class="subquestions">
                                 <label ><span class="">Please specify</span>
                                     <input class="form-control" type="text" name="you_education_other" placeholder="Please specify" >
                                 </label><br>
                             </fieldset>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
                 <div class="form-group">
@@ -178,13 +178,13 @@
                                 <span class="check_checkmark"></span>Other</span>
                              </label><br>
                         </fieldset>
-                        <div id=you_employment_status_other__ID style='display:none'>
+                        <!--<div id=you_employment_status_other__ID style='display:none'>
                             <fieldset class="subquestions">
                                 <label ><span class="">Please specify</span>
                                     <input class="form-control" type="text" name="you_employment_status_other" placeholder="Please specify" >
                                 </label><br>
                             </fieldset>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
                 <div class="form-group">
@@ -325,16 +325,16 @@
             <div id=S3__ID>
                 <div class="row  mr-0 ml-0 p-4 text-center " >
                     <div class="col">
-                        <h4>Please click the link below to start the questionnaire</h4>
+                        <h4>Please keep note of your CAN-ACT User ID (<b><span id=id__ID></span></b>) and Password (<b><span id=password__ID></span></b>).<br><br>
+                            As the survey is anonymised, the research team will be unable to locate or reset your login details.<br><br>
+                            Please click the link below to start the questionnaire<br><br>
+                        </h4>
+                        <a id=canact_registration__ID target="_blank" style="color:#000;font-size: 1.4rem;border-radius:5px;padding:5px;background-color: #748A66" ><span style='font-size:1.4rem;font-weight:normal;' id=refnum__ID></span></a>
                     </div>
                 </div>
                 <div style='max-width:800px;margin-left:auto;margin-right:auto;'>
-                    <hr>
                     <div class="text-center">
-                        Thank you for participating in the CAN-ACT Study. You can log out and return to the survey at any point<br><br>
-                        <i>Please keep note of your CAN-ACT User ID (<b><span id=id__ID></span></b>) and Password (<b><span id=password__ID></span></b>). As the survey is anonymised, the research team will be unable to locate or reset your login details.</i><br><br>
-                        <a id=canact_registration__ID target="_blank" style="color:#000;font-size: 130%;border-radius:5px;padding:5px;background-color: #748A66" ><span style='font-size:1.2rem;font-weight:bold;' id=refnum__ID></span></a>
-                        <br><br>
+                        You can log out and return to the survey at any point<br><br>
                     </div>
                 </div>
             </div>
@@ -441,7 +441,7 @@
                 $(window).scrollTop(0);
             }
             //--ABOUT YOU----------------------------------
-            $("#F__ID select[name='you_gender']").on('change', function () {
+            /*$("#F__ID select[name='you_gender']").on('change', function () {
                 if($("#F__ID select[name='you_gender']").val()=='4'){
                     $('#you_gender_other__ID').show();
                     $("#F__ID input[name='you_gender_other']").prop('required', true)
@@ -450,8 +450,8 @@
                     $("#F__ID input[name='you_gender_other']").prop('required', false);
                     $('#you_gender_other__ID').hide();
                 }
-            })
-            $("#F__ID select[name='you_education']").on('change', function () {
+            })*/
+            /*$("#F__ID select[name='you_education']").on('change', function () {
                 if($("#F__ID select[name='you_education']").val()=='6'){
                     $('#you_education_other__ID').show();
                     $("#F__ID input[name='you_education_other']").prop('required', true)
@@ -460,8 +460,8 @@
                     $("#F__ID input[name='you_education_other']").prop('required', false);
                     $('#you_education_other__ID').hide();
                 }
-            })
-            $("#F__ID input[name='you_employment_status_h']").on('change', function () {
+            })*/
+            /*$("#F__ID input[name='you_employment_status_h']").on('change', function () {
                 if($("#F__ID input[name='you_employment_status_h']:checked").val()=='on'){
                     $('#you_employment_status_other__ID').show();
                     $("#F__ID input[name='you_employment_other']").prop('required', true)
@@ -470,7 +470,7 @@
                     $("#F__ID input[name='you_employment_other']").prop('required', false);
                     $('#you_employment_status_other__ID').hide();
                 }
-            })
+            })*/
             $("#F__ID select[name='you_employment']").on('change', function () {
                 if($("#F__ID select[name='you_employment']").val()=='13'){
                     $('#you_employment_other__ID').show();
