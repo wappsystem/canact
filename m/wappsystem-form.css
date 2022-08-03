@@ -1,5 +1,5 @@
 #D__ID .formbox h3 {
-    font-family: 'Roboto';
+    font-family: 'Outfit';
     font-size: 24px;
     color: #FCFBF5;
     letter-spacing: 0;
@@ -10,7 +10,7 @@
     margin-top: -5px
 }
 #D__ID .formbox h7 {
-    font-family: 'Roboto';
+    font-family: 'Outfit';
     font-size: 16px;
     color: #FCFBF5;
     letter-spacing: 0;
@@ -29,34 +29,34 @@
     border-bottom: 1px solid #E5EEF0 !important 
 }
 #D__ID .form-group h4 {
-    font-family: 'Roboto';
+    font-family: 'Outfit';
     font-size: 16px;
     color: #00263A;
     letter-spacing: 0;
     line-height: 28px;
 }
 #D__ID .form-group h6 {
-    font-family: 'Roboto';
+    font-family: 'Outfit';
     font-size: 14px;
     color: #00263A;
     letter-spacing: 0;
     line-height: 28px;
 }
 #D__ID .small-label {
-    font-family: 'Nunito Sans';
+    font-family: 'Outfit';
     font-weight:600;
     font-size: 14px;
     color: #444645;
 }
 #D__ID label {
-    font-family: 'Nunito Sans';
+    font-family: 'Outfit';
     font-weight:400;
     font-size: 14px;
     color: #444645;
     line-height: 21px;
 }
 #D__ID label span{
-    font-family: 'Nunito Sans';
+    font-family: 'Outfit';
     font-weight:800;
     font-size: 16px;
     color: #444645;
@@ -84,7 +84,7 @@
 #D__ID .btn-primary, #D__ID .btn-primary:active, #D__ID .btn-primary:visited, #D__ID .btn-primary:focus {
     background-color: #00263A;
     border-color: #00263A;
-    font-family: 'Nunito Sans';
+    font-family: 'Outfit';
     font-weight: lighter;
     font-size: 12px;
     letter-spacing: 1px;
@@ -99,7 +99,7 @@
 #D__ID .btn-primary:hover {
     background-color: #506A88;
     border-color: #506A88;
-    font-family: 'Nunito Sans';
+    font-family: 'Outfit';
     font-weight: lighter;
     font-size: 12px;
     letter-spacing: 1px;
@@ -112,7 +112,7 @@
     margin: 15px;
 }
 #D__ID .btn-outline-light {
-    font-family: 'Nunito Sans';
+    font-family: 'Outfit';
     font-weight: lighter;
     font-size: 12px;
     letter-spacing: 1px;
@@ -129,7 +129,7 @@
     color: #E9DD76;
 }
 #D__ID p.note {
-    font-family: 'Nunito Sans';
+    font-family: 'Outfit';
     font-weight: lighter;
     font-size: 16px;
     color: #939597;
@@ -238,37 +238,37 @@
     content:"✔";
 }
 #D__ID .form-group input[type=text] {
-    font-family: 'Nunito Sans';
+    font-family: 'Outfit';
     font-size: 16px;
     color: #6D6F72;
 }
 #D__ID .form-group input[type=tel] {
-    font-family: 'Nunito Sans';
+    font-family: 'Outfit';
     font-size: 16px;
     color: #6D6F72;
 }
 #D__ID .form-group input[type=email] {
-    font-family: 'Nunito Sans';
+    font-family: 'Outfit';
     font-size: 16px;
     color: #6D6F72;
 }
 #D__ID .form-group input[type=number] {
-    font-family: 'Nunito Sans';
+    font-family: 'Outfit';
     font-size: 16px;
     color: #6D6F72;
 }
 #D__ID .form-group select {
-    font-family: 'Nunito Sans';
+    font-family: 'Outfit';
     font-size: 16px;
     color: #6D6F72;
 }
 #D__ID .form-group textarea {
-    font-family: 'Nunito Sans';
+    font-family: 'Outfit';
     font-size: 16px;
     color: #6D6F72;
 }
 #D__ID fieldset.subquestions legend {
-    font-family: 'Nunito Sans';
+    font-family: 'Outfit';
     font-size: 16px;
     color: #00263A;
     line-height: 21px;
