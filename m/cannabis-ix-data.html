@@ -9,7 +9,11 @@
             //-------------------------------------
             $('#title__ID').text($vm.module_list[$vm.vm['__ID'].name].task_name);            
             //-------------------------------------
-            var fields="Participant_uid,leg_clear,leg_arrested,leg_arrested_related,leg_wait_drive,leg_convicted_driving,leg_roadside_testing,leg_driving_ability,leg_medicinal_impairs_driving,leg_recreational_impairs_driving,leg_support_exemptions_driving,leg_influenced_use,leg_influenced_use_other,leg_influenced_alcohol,leg_influenced_illicit,leg_cultivating_cannabis,leg_cultivating_cannabis_other,leg_limit_plants,leg_limit_possess,leg_status,comments";
+            var fields="Participant_uid,leg_possess_50,leg_possess_150,leg_plants,leg_smoke,leg_growing,leg_children,leg_clear,leg_reason_using,leg_satisfied,leg_scared";
+            fields+=",leg_legal_number,leg_source_cannabis,leg_support_needs,leg_support_sell,leg_arrested,leg_arrested_related,leg_convicted_driving,leg_wait_drive";
+            fields+=",leg_roadside_testing,leg_roadside_testing_other,leg_driving_ability,leg_medicinal_impairs_driving,leg_recreational_impairs_driving,leg_support_exemptions_driving";
+            fields+=",leg_influenced_use,leg_influenced_use_other,leg_influenced_alcohol,leg_influenced_illicit,leg_cultivating_cannabis,leg_cultivating_cannabis_other,leg_limit_plants";
+            fields+=",leg_limit_possess,leg_status,comments"
             m.fields="_Form,"+fields+",Submit_date,Submitted_by,_Delete";
             //-------------------------------------
         }
