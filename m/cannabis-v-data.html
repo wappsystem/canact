@@ -1,15 +1,16 @@
 <div id=D__ID>
     <div>
-            VmInclude:__COMPONENT__/g/grid.01.html
+        VmInclude:__CURRENT_PATH__/grid.01.html
         </div>
     <script>
         function F__ID(){
             //-------------------------------------
-            VmInclude:__COMPONENT__/g/grid.01.js       
+            VmInclude:__CURRENT_PATH__/grid.01.js      
             //-------------------------------------
             $('#title__ID').text($vm.module_list[$vm.vm['__ID'].name].task_name);
             //-------------------------------------
             var fields="Participant_uid,pre_user,pre_product_other,pre_vaporised,pre_vaporised_other,pre_vaporised_duration,pre_smoked,pre_smoked_other,pre_smoked_duration,pre_tablet,pre_tablet_other,pre_tablet_duration,pre_liquid,pre_liquid_other,pre_liquid_duration,pre_spray,pre_spray_other,pre_spray_duration,pre_lozenge,pre_lozenge_other,pre_lozenge_duration,pre_other,pre_other_other,pre_other_duration,pre_symptoms_change_a,pre_symptoms_change_b,pre_symptoms_change_c,pre_symptoms_change_d,pre_symptoms_change_e,pre_symptoms_change_f,pre_symptoms_change_g,pre_symptoms_change_h,pre_symptoms_change_i,pre_symptoms_change_j,pre_symptoms_change_k,pre_symptoms_change_l,pre_symptoms_change_m,pre_symptoms_change_n,pre_symptoms_change_o,pre_symptoms_change_p,pre_symptoms_change_q,pre_symptoms_change_r,pre_symptoms_change_s,pre_symptoms_change_t,pre_symptoms_change_u,pre_symptoms_change_v,pre_symptoms_change_w,pre_symptoms_other_x,pre_symptoms_change_x,pre_symptoms_change_y,pre_spent,pre_product_a,pre_product_b,pre_product_c,pre_product_d,pre_product_e,pre_product_f,pre_product_h,pre_vaporised_stop_a,pre_vaporised_stop_b,pre_vaporised_stop_c,pre_vaporised_stop_d,pre_vaporised_stop_e,pre_vaporised_stop_f,pre_vaporised_stop_h,pre_smoked_stop_a,pre_smoked_stop_b,pre_smoked_stop_c,pre_smoked_stop_d,pre_smoked_stop_e,pre_smoked_stop_f,pre_smoked_stop_h,pre_tablet_stop_a,pre_tablet_stop_b,pre_tablet_stop_c,pre_tablet_stop_d,pre_tablet_stop_e,pre_tablet_stop_f,pre_tablet_stop_h,pre_liquid_stop_a,pre_liquid_stop_b,pre_liquid_stop_c,pre_liquid_stop_d,pre_liquid_stop_e,pre_liquid_stop_f,pre_liquid_stop_h,pre_spray_stop_a,pre_spray_stop_b,pre_spray_stop_c,pre_spray_stop_d,pre_spray_stop_e,pre_spray_stop_f,pre_spray_stop_h,pre_lozenge_stop_a,pre_lozenge_stop_b,pre_lozenge_stop_c,pre_lozenge_stop_d,pre_lozenge_stop_e,pre_lozenge_stop_f,pre_lozenge_stop_h,pre_other_stop_a,pre_other_stop_b,pre_other_stop_c,pre_other_stop_d,pre_other_stop_e,pre_other_stop_f,pre_other_stop_h,pre_symptoms_a,pre_symptoms_b,pre_symptoms_c,pre_symptoms_d,pre_symptoms_e,pre_symptoms_f,pre_symptoms_g,pre_symptoms_h,pre_symptoms_i,pre_symptoms_j,pre_symptoms_k,pre_symptoms_l,pre_symptoms_m,pre_symptoms_n,pre_symptoms_o,pre_symptoms_p,pre_symptoms_q,pre_symptoms_r,pre_symptoms_s,pre_symptoms_t,pre_symptoms_u,pre_symptoms_v,pre_symptoms_w,pre_symptoms_x,pre_symptoms_y";
+            var export_fields=fields;
             m.fields="_Form,"+fields+",Submit_date,Submitted_by,_Delete";
             //-------------------------------------
         }
