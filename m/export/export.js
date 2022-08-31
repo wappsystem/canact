@@ -441,8 +441,10 @@ var prepare_output=function(data){
 		if(output_data.length>0){
 			//console.log("ALL items: "+JSON.stringify(output_data))
 			//console.log("ALL part: "+JSON.stringify(participant_data))
-			var tmp=JSON.stringify(output_data).replace(/"off"/g,'"off"').replace(/"on"/g,'"on"') //.replace(',"":""','');
+			var tmp=JSON.stringify(output_data).replace(/"off"/g,'0').replace(/"on"/g,'1') //.replace(',"":""','');
 			output_data=JSON.parse(tmp);
+			tmp=JSON.stringify(participant_data).replace(/"off"/g,'0').replace(/"on"/g,'1') //.replace(',"":""','');
+			participant_data=JSON.parse(tmp);
 			//Add a number "X_" for all labels apart from particpant and first records, so we don't have duplicated lables
 			if(j>0){
 				for (var i in output_data){
