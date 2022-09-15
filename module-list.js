@@ -38,10 +38,10 @@
         "cannabis-ix-form": {url:"$H/m/cannabis-ix-form.html",Table:"canact-cannabis-xi",task_name:"IX. LEGISLATION "},
         "cannabis-lab-analysis-data": {url:"$H/m/cannabis-lab-analysis-data.html",Table:"canact-cannabis-lab",form_module:"cannabis-lab-analysis-form",task_name:"Analysis of your cannabis"},
         "cannabis-lab-analysis-form": {url:"$H/m/cannabis-lab-analysis-form.html",Table:"canact-cannabis-lab",task_name:"Analysis of your cannabis"},
-        "cannabis-lab-form": {url:"$H/m/cannabis-lab-form.html",Table:"canact-cannabis-lab",task_name:"Free analysis of your cannabis"},
-        "cannabis-thank-you-form": {url:"$H/m/cannabis-thank-you-form.html",Table:"canact-cannabis-thank-you",task_name:"What are the new cannabis laws in the ACT?"},
+        "cannabis-lab-form": {url:"$H/m/cannabis-lab-form.html",Table:"canact-cannabis-lab",task_name:" 3. Free analysis of your cannabis (instructions and results)"},
+        "cannabis-thank-you-form": {url:"$H/m/cannabis-thank-you-form.html",Table:"canact-cannabis-thank-you",task_name:"1. What are the new cannabis laws in the ACT?"},
         "cannabis-prelab-i-analysis-data": {url:"$H/m/cannabis-prelab-i-analysis-data.html",Table:"canact-cannabis-prelab",form_module:"cannabis-prelab-i-analysis-form",task_name:"Analysis info and Consent"},
-        "cannabis-prelab-i-analysis-form": {url:"$H/m/cannabis-prelab-i-analysis-form.html",Table:"canact-cannabis-prelab",task_name:"CANNABIS SAMPLE ANALYSIS"},
+        "cannabis-prelab-i-analysis-form": {url:"$H/m/cannabis-prelab-i-analysis-form.html",Table:"canact-cannabis-prelab",task_name:"2. Free analysis of your cannabis (information & consent)"},
 
     }
     for(p in modules){
