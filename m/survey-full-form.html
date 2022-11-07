@@ -4610,7 +4610,7 @@
                 if(window.location.toString().indexOf('tb=demo')!=-1) db="&tb=demo";
                 var d="";  if(window.location.toString().indexOf('_d=1')!=-1) d="&_d=1";
                 var p="";  if(window.location.toString().indexOf('_p=1')!=-1) p="&_p=1";
-                var u="?username="+index.result.ops[0].UID+"&password="+$('#F__ID input[name=_Password').val();
+                var u="?username="+index.nr.UID+"&password="+$('#F__ID input[name=_Password').val();
                 //console.log(JSON.stringify(m))
                 var q_url=m.report.replace('$H',$vm.hosting_path)+u+db+d+p;
                 $('#refnum__ID').text(q_url);
