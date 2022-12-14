@@ -57,26 +57,29 @@
                 <div class="form-group">
                     <div class="questiongroup">
                         <fieldset class="pl-2">
-                            <label><span class="">I would like a free and completely anonymous content analysis of my cannabis</span></label><br>
+                            <label><span class="">Have requested a content analysis</span></label><br>
                             <label class="radiobuttons ">
-                                <input type="radio" name="lab_analysis" value="1" required>
+                                <input type="radio" name="lab_analysis" value="1" disabled>
                                 <span class="checkmark"></span>Yes</label>
                             <label class="radiobuttons ">
-                                <input type="radio" name="lab_analysis" value="0">
+                                <input type="radio" name="lab_analysis" value="0" disabled>
                                 <span class="checkmark"></span>No </label>
                         </fieldset>
                     </div>
                 </div>
+                <div class="form-control">
+                    <u style='cursor:pointer' id=link_File_Name__ID></u>
+                    <br>
+                    <input type="file" name=File_Name style="margin-top:6px" /> <button type="button" id=x_File_Name__ID>Remove</button>
+                </div>
+                <div class="form-control">
+                    <u style='cursor:pointer' id=link_File_Name_2__ID></u>
+                    <br>
+                    <input type="file" name=File_Name_2 style="margin-top:6px" /> <button type="button" id=x_File_Name_2__ID>Remove</button>
+                </div>
+                <br>
             </div>
             <button id=submit__ID type="submit" d=1 style="border-radius:2rem;background-color: #748A66;width:180px;height:60px;font-family: Arial, Helvetica, sans-serif" class="btn btn-success btn-lg">Submit</button>
-
-<!--
-            <div class="form-control">
-                <u style='cursor:pointer' id=link_File_Name__ID></u>
-                <br>
-                <input type="file" name=File_Name style="margin-top:6px" /> <button type="button" id=x_File_Name__ID>Remove</button>
-            </div>
--->
         </form>
     </div>
     VmInclude:__COMPONENT__/m/model.01.html
@@ -283,19 +286,9 @@
             m.load=function(){
                 load2();
                 m.set_file_link_s0("File_Name");
-                
+                m.set_file_link_s0("File_Name_2");
                 $('#title__ID').text($vm.module_list[$vm.vm['__ID'].name].task_name);
-                console.log(JSON.stringify(m.input.participant_record))
-                console.log(JSON.stringify(m.input.lab))
-                if(m.input!=undefined) $vm.deserialize(m.input.lab,'#F__ID');
-                if(m.input.lab.Data.lab_analysis=="1"){
-                    $('#submit__ID').hide();
-                    $('#lab_result__ID').show();
-                }
-                $('#Participant__ID').val(m.input.participant_record.UID);
-                $('#D__ID input[name=Participant_uid]').val(m.input.participant_record.UID);
-                $('#Participant__ID').attr('readonly', true);
-                $('#Participant__ID').addClass('input-disabled');
+                $('#D__ID input[name=Participant_uid]').val(m.input.record.Data.Participant_uid);
             }
             //-------------------------------------
         }
