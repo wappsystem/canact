@@ -9,7 +9,7 @@
         "participant-data":   	{url:"$H/m/survey-data.html",Table:"canact-survey",form_module:"participant-form",
                                             child_panel:"panel-child",
                                             questionnaire_setup:"online-questionnaire-setup-canact",
-                                            online_questionnaire:"online-questionnaire"},                                    
+                                            online_questionnaire:"online-questionnaire",report:"$H/oq.html"},                                    
         "participant-form":   	{url:"$H/m/survey-form.html",Table:"canact-survey"},
 
         "survey-data": {url:"$H/m/survey-data.html",Table:"canact-survey",form_module:"survey-form",report:"$H/oq.html"},
