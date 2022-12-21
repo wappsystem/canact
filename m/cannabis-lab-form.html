@@ -206,12 +206,12 @@
                                     <textarea class="form-control" name="Result" readonly></textarea>
                                 </label>
                             </fieldset>
-                            <!--<fieldset class="">
+                            <fieldset class="">
                                 <label style="width:100%"><span class="">Files<br></span>
                                     <u style='cursor:pointer' id=link_File_Name__ID></u><br>
                                     <u style='cursor:pointer' id=link_File_Name_2__ID></u><br>
                                 </label>
-                            </fieldset>-->
+                            </fieldset>
                         </div>
                     </div> 
                 </div>
@@ -234,7 +234,7 @@
                 return window.btoa(binary);
             }
             //---------------------------------------------
-            m.set_file_link_s0=function(tag){
+            m.set_file_link_s0_participant=function(tag){
                 $('#link_'+tag+'__ID').html("");
                 $('#x_'+tag+'__ID').hide();
                 var record=m.input.lab;
@@ -254,7 +254,7 @@
                         var done=0;
                         var get_file_from_server=function(){
                             if(done==0){
-                                $vm.request_S({api:m.api,cmd:"file",id:rid,table:m.Table,uid:record.UID, field:tag,filename:filename,options:m.options},function(res, textStatus, xhr){
+                                $vm.request_S({api:m.api,cmd:"file-canact",id:rid,table:m.Table,uid:record.UID, field:tag,filename:filename,options:m.options},function(res, textStatus, xhr){
                                     try{
                                         if(res=="404"){
                                             alert("No such file.");
@@ -286,7 +286,7 @@
                                     cache => {
                                         cache.match(m.Table+"-"+rid+"-"+tag).then(response => {
                                             if(response){
-                                                $vm.request_S({api:m.api,cmd:"file",id:rid,table:m.Table,uid:record.UID, field:tag,filename:filename,datetime:1,options:m.options},function(res){
+                                                $vm.request_S({api:m.api,cmd:"file-canact",id:rid,table:m.Table,uid:record.UID, field:tag,filename:filename,datetime:1,options:m.options},function(res){
                                                     var dtA=new Date(response.headers.get('last-modifie')).getTime();
                                                     var dtB=new Date(res.result).getTime();
                                                     dtA=dtA-dtA%1000;
@@ -363,7 +363,7 @@
                     success: function(c,textStatus, request){
                         var dt2=new Date().getTime();
                         if($vm.debug_message===true){
-                            if(c.status=='ok' || req.cmd=='file')  console.log("%c"+req.cmd+'('+this_N+') FROM'+" --- "+(dt2-dt1).toString()+"ms","color:lightgreen",c);
+                            if(c.status=='ok' || req.cmd=='file' || req.cmd=='file-canact')  console.log("%c"+req.cmd+'('+this_N+') FROM'+" --- "+(dt2-dt1).toString()+"ms","color:lightgreen",c);
                             else                                   console.log("%c"+req.cmd+'('+this_N+') FROM'+" --- "+(dt2-dt1).toString()+"ms","color:red",c);
                         }
                         if($vm.ajax_server_error==1) return;
@@ -399,7 +399,7 @@
                         return xhr;
                     }
                 }
-                else if( req.cmd=="file" && req.datetime==undefined ){
+                else if( (req.cmd=="file-canact" || req.cmd=="file") && req.datetime==undefined ){
                     delete param.dataType;
                     param.xhrFields={responseType: 'blob'};
                 }
@@ -416,8 +416,8 @@
             var load2=m.load;
             m.load=function(){
                 load2();  
-                m.set_file_link_s0("File_Name");             
-                m.set_file_link_s0("File_Name_2");             
+                m.set_file_link_s0_participant("File_Name");             
+                m.set_file_link_s0_participant("File_Name_2");             
                 $('#title__ID').text($vm.module_list[$vm.vm['__ID'].name].task_name);
                 console.log(JSON.stringify(m.input.participant_record))
                 console.log(JSON.stringify(m.input.lab))
