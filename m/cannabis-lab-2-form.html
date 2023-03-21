@@ -213,7 +213,14 @@
                                 </label>
                             </fieldset>
                         </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="questiongroup ">
+                                    <u style='cursor:pointer' id=first_analysis__ID>If you would like to view the results from analysis of sample 1, please click this link</u><br>
+                                </label>
+                        </div>
                     </div> 
+
                 </div>
             </div>
         </form>
@@ -452,6 +459,21 @@
                     $('#pickup__ID').click();
                 }
             }
+            $('#first_analysis__ID').on('click',function(){
+                console.log(JSON.stringify(m.input.participant_record));
+                console.log(window.location.toString())
+                var db=""; 
+                var new_html=window.location.toString();
+                new_html=new_html.replace('oq-2.html','oq.html')
+                /*if(window.location.toString().indexOf('tb=demo')!=-1) db="&tb=demo";
+                var d="";  if(window.location.toString().indexOf('_d=1')!=-1) d="&_d=1";
+                var p="";  if(window.location.toString().indexOf('_p=1')!=-1) p="&_p=1";
+                var u="?username="+records[I].UID+"&password="+records[I].Data._Password;
+                var q_url=m.report_2.replace('$H',$vm.hosting_path)+u+db+d+p+"";
+                window.open(q_url);*/
+                window.open(new_html);
+            })
+
             $('#pickup__ID').on('click',function(){
                 $('#pickup_code__ID').html(makeid(6));
             
