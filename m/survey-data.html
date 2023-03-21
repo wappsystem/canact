@@ -9,7 +9,7 @@
             //-------------------------------------
             $('#title__ID').text('Survey');            
             //-------------------------------------
-            var fields="Record_ID|UID,consent,_Questionnaire,_Login_ID,_Password,you_age,you_live,you_gender,you_gender_other,you_education,you_education_other,you_employment_status_a,you_employment_status_b,you_employment_status_c,you_employment_status_d,you_employment_status_e,you_employment_status_f,you_employment_status_g,you_employment_status_h,you_employment_status_other,you_employment,you_employment_other,you_property,you_property_other,you_household_a,you_household_b,you_household_c,you_household_d,you_household_e,you_household_f,you_household_g,you_household_h,you_household_other,you_employment,you_employment_other,you_hear";
+            var fields="Record_ID|UID,consent,_Questionnaire,_Second_sample,_Login_ID,_Password,you_age,you_live,you_gender,you_gender_other,you_education,you_education_other,you_employment_status_a,you_employment_status_b,you_employment_status_c,you_employment_status_d,you_employment_status_e,you_employment_status_f,you_employment_status_g,you_employment_status_h,you_employment_status_other,you_employment,you_employment_other,you_property,you_property_other,you_household_a,you_household_b,you_household_c,you_household_d,you_household_e,you_household_f,you_household_g,you_household_h,you_household_other,you_employment,you_employment_other,you_hear";
             var export_fields="ID,consent,you_age,you_live,you_gender,you_gender_other,you_education,you_education_other,you_employment_status_a,you_employment_status_b,you_employment_status_c,you_employment_status_d,you_employment_status_e,you_employment_status_f,you_employment_status_g,you_employment_status_h,you_employment_status_other,you_employment,you_employment_other,you_property,you_property_other,you_household_a,you_household_b,you_household_c,you_household_d,you_household_e,you_household_f,you_household_g,you_household_h,you_household_other,you_employment,you_employment_other,you_hear"
             m.fields="_Form,"+fields+",Submit_date,Submitted_by,_Delete";
             //-------------------------------------
@@ -20,11 +20,24 @@
                         //MongoDB
                         td.html("<u style='cursor:pointer'>Questionnaire</u>");
                         td.find('u').on('click',function(){
+                            console.log($vm.hosting_path)
                             var db=""; if(window.location.toString().indexOf('tb=demo')!=-1) db="&tb=demo";
                             var d="";  if(window.location.toString().indexOf('_d=1')!=-1) d="&_d=1";
                             var p="";  if(window.location.toString().indexOf('_p=1')!=-1) p="&_p=1";
                             var u="?username="+records[I].UID+"&password="+records[I].Data._Password;
                             var q_url=m.report.replace('$H',$vm.hosting_path)+u+db+d+p+"";
+    						window.open(q_url);
+                        });
+                        break;
+                        case '_Second_sample':
+                        //MongoDB
+                        td.html("<u style='cursor:pointer'>Second Sample</u>");
+                        td.find('u').on('click',function(){
+                            var db=""; if(window.location.toString().indexOf('tb=demo')!=-1) db="&tb=demo";
+                            var d="";  if(window.location.toString().indexOf('_d=1')!=-1) d="&_d=1";
+                            var p="";  if(window.location.toString().indexOf('_p=1')!=-1) p="&_p=1";
+                            var u="?username="+records[I].UID+"&password="+records[I].Data._Password;
+                            var q_url=m.report_2.replace('$H',$vm.hosting_path)+u+db+d+p+"";
     						window.open(q_url);
                         });
                         break;

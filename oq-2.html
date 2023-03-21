@@ -7,6 +7,11 @@
         <meta name='viewport' content='width=device-width, initial-scale=1'>
         <link rel="icon" href="data:,">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.css" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+        <link rel="manifest" href="images/site.webmanifest">        
+
     </head>
     <body>
         <!-- Typical website layout, the contents are dynamiclly updated by modules-->
@@ -18,7 +23,7 @@
     </body>
     <script boot-up>
         //------------------------------------
-        $vm={};$vm.ver=[0.40,0.26]; //increase ver[0] if any module changed, increase ver[1] if vm.js changed
+        $vm={};$vm.ver=[0.02,0.01]; //increase ver[0] if any module changed, increase ver[1] if vm.js changed
         $vm.debug=1;
         $vm.lab=0;
         //------------------------------------
@@ -35,22 +40,27 @@
         //modules used immediately
         $vm.module_list={
             //you can add modules here directly
-            "home":	        {url:"$H/0-result/home.html",router:1},
-            "app":	        {url:"$H/0-result/app.html"},
-            "header":	    {url:"$H/0-result/header.html"},
-            "footer":	    {url:"$H/0-result/footer.html"},
+            "home":         {url:"$H/m/oq-2-login.html","Table":"canact-survey",questionnaire_panel:"online-panel"},
+            "online-panel":   {url:"$H/m/oq-2-panel.html"},
+            //"home":	        {url:"$H/m/login.html",router:1},
+            "app":	        {url:"$H/0-oq-2/app.html"},
+            "header":	    {url:"$H/0-oq-2/header.html"},
+            "footer":	    {url:"$H/0-oq-2/footer.html"},
         };
         for(p in $vm.module_list) $vm.module_list[p].url=$vm.module_list[p].url.replace('$H',$vm.hosting_path);
         //------------------------------------
         //all other modules, used on demand 
+        //------------------------------------
         $vm.app_modules=[
             //you can add a js file that will add mmodules to the $vm.module_list
+            //"$H/module-login.js",
             "$H/module-list.js",
         ]
-        for(i in $vm.app_modules) $vm.app_modules[i]=$vm.app_modules[i].replace('$H',$vm.hosting_path);
+        for(i in $vm.app_modules) $vm.app_modules[i]=$vm.app_modules[i].replace('$H',$vm.hosting_path).replace('online-report/module-list','module-list');
         //------------------------------------
         //called by framework
         $vm.start=function(){
+            //window.onpopstate=function(){return;}
             $vm.load_component('header',$vm.root_layout_header,{});
             $vm.load_component('footer',$vm.root_layout_footer,{});
             $vm.load_component('app',$vm.root_layout_app,{});
