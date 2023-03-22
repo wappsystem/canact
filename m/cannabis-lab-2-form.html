@@ -261,7 +261,7 @@
                         var done=0;
                         var get_file_from_server=function(){
                             if(done==0){
-                                $vm.request_S({api:m.api,cmd:"file-canact",id:rid,table:m.Table,uid:record.UID, field:tag,filename:filename,options:m.options},function(res, textStatus, xhr){
+                                $vm.request_S({api:m.api,cmd:"file-canact-2",id:rid,table:m.Table,uid:record.UID, field:tag,filename:filename,options:m.options},function(res, textStatus, xhr){
                                     try{
                                         if(res=="404"){
                                             alert("No such file.");
@@ -293,7 +293,7 @@
                                     cache => {
                                         cache.match(m.Table+"-"+rid+"-"+tag).then(response => {
                                             if(response){
-                                                $vm.request_S({api:m.api,cmd:"file-canact",id:rid,table:m.Table,uid:record.UID, field:tag,filename:filename,datetime:1,options:m.options},function(res){
+                                                $vm.request_S({api:m.api,cmd:"file-canact-2",id:rid,table:m.Table,uid:record.UID, field:tag,filename:filename,datetime:1,options:m.options},function(res){
                                                     var dtA=new Date(response.headers.get('last-modifie')).getTime();
                                                     var dtB=new Date(res.result).getTime();
                                                     dtA=dtA-dtA%1000;
@@ -370,7 +370,7 @@
                     success: function(c,textStatus, request){
                         var dt2=new Date().getTime();
                         if($vm.debug_message===true){
-                            if(c.status=='ok' || req.cmd=='file' || req.cmd=='file-canact')  console.log("%c"+req.cmd+'('+this_N+') FROM'+" --- "+(dt2-dt1).toString()+"ms","color:lightgreen",c);
+                            if(c.status=='ok' || req.cmd=='file' || req.cmd=='file-canact-2')  console.log("%c"+req.cmd+'('+this_N+') FROM'+" --- "+(dt2-dt1).toString()+"ms","color:lightgreen",c);
                             else                                   console.log("%c"+req.cmd+'('+this_N+') FROM'+" --- "+(dt2-dt1).toString()+"ms","color:red",c);
                         }
                         if($vm.ajax_server_error==1) return;
@@ -406,7 +406,7 @@
                         return xhr;
                     }
                 }
-                else if( (req.cmd=="file-canact" || req.cmd=="file") && req.datetime==undefined ){
+                else if( (req.cmd=="file-canact-2" || req.cmd=="file") && req.datetime==undefined ){
                     delete param.dataType;
                     param.xhrFields={responseType: 'blob'};
                 }
