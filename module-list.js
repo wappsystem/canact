@@ -42,7 +42,7 @@
         "cannabis-lab-analysis-data": {url:"$H/m/cannabis-lab-analysis-data.html",Table:"canact-cannabis-lab",form_module:"cannabis-lab-analysis-form",task_name:"Analysis of your cannabis"},
         "cannabis-lab-analysis-form": {url:"$H/m/cannabis-lab-analysis-form.html",Table:"canact-cannabis-lab",task_name:"Analysis of your cannabis"},
         "cannabis-lab-analysis-2-data": {url:"$H/m/cannabis-lab-analysis-data.html",Table:"canact-cannabis-lab-2",form_module:"cannabis-lab-analysis-2-form",task_name:"Analysis of your cannabis sample 2"},
-        "cannabis-lab-analysis-2-form": {url:"$H/m/cannabis-lab-analysis-form.html",Table:"canact-cannabis-lab-2",task_name:"Analysis of your cannabis sample 2"},
+        "cannabis-lab-analysis-2-form": {url:"$H/m/cannabis-lab-analysis-2-form.html",Table:"canact-cannabis-lab-2",task_name:"Analysis of your cannabis sample 2"},
         "cannabis-lab-form": {url:"$H/m/cannabis-lab-form.html",Table:"canact-cannabis-lab",task_name:" 3. Free analysis of your cannabis (instructions and results)"},
         "cannabis-lab-2-form": {url:"$H/m/cannabis-lab-2-form.html",Table:"canact-cannabis-lab-2",task_name:" 2.Second Free analysis of your cannabis (instructions and results)"},
         "cannabis-thank-you-form": {url:"$H/m/cannabis-thank-you-form.html",Table:"canact-cannabis-thank-you",task_name:"1. What are the new cannabis laws in the ACT?"},
