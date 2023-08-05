@@ -210,6 +210,7 @@
                                 <label style="width:100%"><span class="">Download your report here<br></span>
                                     <u style='cursor:pointer' id=link_File_Name__ID></u><br>
                                     <u style='cursor:pointer' id=link_File_Name_2__ID></u><br>
+                                    <u style='cursor:pointer' id=link_File_Name_3__ID></u><br>
                                 </label>
                             </fieldset>
                         </div>
@@ -425,6 +426,7 @@
                 load2();  
                 m.set_file_link_s0_participant("File_Name");             
                 m.set_file_link_s0_participant("File_Name_2");             
+                m.set_file_link_s0_participant("File_Name_3");             
                 $('#title__ID').text($vm.module_list[$vm.vm['__ID'].name].task_name);
                 console.log(JSON.stringify(m.input.participant_record))
                 console.log(JSON.stringify(m.input.lab))

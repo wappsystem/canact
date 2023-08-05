@@ -77,6 +77,11 @@
                     <br>
                     <input type="file" name=File_Name_2 style="margin-top:6px" /> <button type="button" id=x_File_Name_2__ID>Remove</button>
                 </div>
+                <div class="form-control">
+                    <u style='cursor:pointer' id=link_File_Name_3__ID></u>
+                    <br>
+                    <input type="file" name=File_Name_3 style="margin-top:6px" /> <button type="button" id=x_File_Name_3__ID>Remove</button>
+                </div>
                 <br>
             </div>
             <button id=submit__ID type="submit" d=1 style="border-radius:2rem;background-color: #748A66;width:180px;height:60px;font-family: Arial, Helvetica, sans-serif" class="btn btn-success btn-lg">Submit</button>
@@ -287,6 +292,7 @@
                 load2();
                 m.set_file_link_s0("File_Name");
                 m.set_file_link_s0("File_Name_2");
+                m.set_file_link_s0("File_Name_3");
                 $('#title__ID').text($vm.module_list[$vm.vm['__ID'].name].task_name);
                 $('#D__ID input[name=Participant_uid]').val(m.input.record.Data.Participant_uid);
             }
