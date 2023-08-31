@@ -75,7 +75,7 @@
 			</div>
 			<div class="row text-right">
 				<div class="col-lg-12 col-sm-12 p-2">
-					<button id="next__ID" style="color:black;background-color:#748A66" class="btn btn-lg">Continue</button>
+					<!--<button id="next__ID" style="color:black;background-color:#748A66" class="btn btn-lg">Continue</button>-->
 				</div>
 			</div>
 			<div class="row text-left" style="font-size:smaller">
@@ -157,8 +157,8 @@
 			$('#second_page__ID').hide();
 			var m=$vm.module_list['__MODULE__'];
 			if(m.prefix==undefined) m.prefix="";
-			$('#yes__ID').on('click',function(){	$vm.load_module(m.prefix+'survey-form','',{});	})
-			$('#next__ID').on('click',function(){$('#second_page__ID').show();$('#first_page__ID').hide();$(window).scrollTop(0);	})
+			//$('#yes__ID').on('click',function(){	$vm.load_module(m.prefix+'survey-form','',{});	})
+			//$('#next__ID').on('click',function(){$('#second_page__ID').show();$('#first_page__ID').hide();$(window).scrollTop(0);	})
 			//$('#no__ID').on('click',function(){		$vm.alert("Completing questionnaires is necessary to be part of the study.") })
 			$('#list__ID').on('dblclick',function(){
 				console.log("AAAAAA: "+JSON.stringify(m))
