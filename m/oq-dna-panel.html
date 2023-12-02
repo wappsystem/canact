@@ -1,0 +1,154 @@
+<div id=page__ID>
+	<div id=panel__ID class="container-fluid" style='max-width:800px'>
+		<div class="text-center panel__ID">
+				<!--<img style="width:50%" src="images/logo_small.png">-->
+				<h5 class= "text-left ml-5" id=congratulation__ID style='color:#385723;font-size:1.2rem'></h5>
+				<hr style='border-top:1px solid #000;'></hr>
+                <div>
+                    <h5 class= "text-left ml-5">Please click on link below.<br>
+                </div>
+                <div id=items__ID  class= "text-left ml-5" style="font-size:larger"></div>
+            <!--<a name=signinout onclick="$vm.signout();" class="btn btn-primary" style='cursor:pointer'>Sign out</a>-->
+    	</div>
+	</div>
+</div>
+<!-- <div id=panel__ID>
+    Please answer the following questionnaires. Follow the instruction on each of them.<br><br>
+	<div id=items__ID></div>
+</div>
+</div>-->
+
+<script>
+	function F__ID(){
+        var id_list;
+		//--------------------------------------------------------
+		$('#D__ID').on('load',function(){
+		})
+		//--------------------------------------------------------
+		$('#D__ID').on('show',function(){
+            var record=$vm.vm['__ID'].input.record;
+			id_list="cannabis-dna-form";
+            if(id_list==undefined){
+                alert("No questionnaire was found");
+                return;
+            }
+			setup_panel();
+		})
+
+		//--------------------------------------------------------
+		var status=[]
+		//---------------------------------
+		var setup_panel=function(){
+			//----------------------------------
+		    var ids=id_list.split(',');
+		    var txt="" //"<ul>";
+		    //----------------------------------
+		    for(var i=0;i<ids.length;i++){
+				var m=ids[i];
+		        if(status[m]==undefined){
+		            status[m]={rid:0}
+				}
+				var task_name="not found";
+				var mm=$vm.module_list[m];
+				if(mm!=undefined){
+					task_name=mm.task_name;
+					status[m].Table=mm.Table;
+				}
+				txt+="<li m="+m+">"+task_name+"</li><br>";
+		    }
+            txt+""; //"</ul>";
+		    $('#items__ID').html(txt);
+		    //----------------------------------
+			$('#items__ID li').each(function(){
+		        var $li=$(this);
+				$li.removeClass('li_allowed__ID')
+				$li.addClass('li_not_allowed__ID qbtn')
+			})
+			//----------------------------------
+			$('#items__ID li').each(function(){
+		        var $li=$(this);
+		        var m=$li.attr('m');
+		        if(status[m].rid==0){
+                    jQuery.ajaxSetup({async:false});
+                    $vm.request({cmd:"find-s",table:$vm.module_list[m].Table,options:{}},function(res){
+                        if(res.permission==false){
+                            alert("No permission");
+                            return;
+                        }
+                        if(res.result.length==0){
+                        }
+                        else{
+                            status[m].rid=1;
+                        }
+                    })
+                    jQuery.ajaxSetup({async:true});
+		        }
+		        if(status[m].rid==0){
+					$li.removeClass('li_not_allowed__ID')
+					$li.addClass('li_allowed__ID')
+		            var task_name=$li.html();
+		            var module=$li.attr('m');
+		            $li.html("<u style='cursor:pointer' m="+module+">"+task_name+"</u>");
+		            $li.find('u').on('click',function(){
+		                var m=$(this).attr('m');
+                        var record=$vm.vm['__ID'].input.record;
+						$vm.load_module(m,'',{participant_record:record,goback:1});
+		            });
+		            return false; // break out the loop
+		        }
+		    })
+		    //----------------------------------
+		}
+		//--------------------------------------------------------
+	}
+	//--------------------------------------------------------
+</script>
+<style>
+	#D__ID{
+		height:100%;
+        overflow:auto;
+		animation: vm_module_fadein 1.0s;
+		/*background:rgba(100,103,94,0.2);*/
+	}
+	#page__ID{
+		height:100%;
+		display: flex;
+		/*align-items: center;*/
+		padding-top:50px;
+	}
+	.panel__ID{
+		color:#000;
+		font-weight: normal;
+		background-color: rgb(250,250,234,1);
+	    padding: 30px 20px 10px 20px;
+	    border-radius: 15px;
+	}
+	@media screen and (max-width:786px){
+		#page__ID{
+			display: block;
+		}
+	}
+    #panel__ID li{
+		cursor:pointer;
+	}
+	ul {
+		list-style:none;
+	}
+	.li_not_allowed__ID{
+		color:#aaa!Important;
+		cursor:not-allowed!Important;
+        display:block;
+	}
+	.li_allowed__ID{
+		color:#000!Important;
+		cursor:pointer!Important;
+        display:block;
+	}
+	.li_not_show__ID{
+		color:#aaa!Important;
+		cursor:not-allowed!Important;
+        display:none;
+	}
+	VmInclude:__CURRENT_PATH__/wappsystem-form.css
+
+</style>

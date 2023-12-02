@@ -207,12 +207,35 @@
                                 </label>
                             </fieldset>
                             <fieldset class="">
+                                For information around <b>cannabinoid analysis/results</b>, please access this 
+                                    <a href="images/Phytocannabinoid information.pdf" target="_blank"><b><u>link </u></b></a><br>
+                                For information around <b>contaminant</b>, please access this 
+                                    <a href="images/Contaminant Information.pdf" target="_blank"><b><u>link </u></b></a><br>
+                                For information around <b>terpenoid</b>, please access this 
+                                    <a href="images/Terpenoid information.pdf" target="_blank"><b><u>link </u></b></a><br>
+                            </fieldset>
+                            <br>
+                            <fieldset class="">
                                 <label style="width:100%"><span class="">Download your report here<br></span>
                                     <u style='cursor:pointer' id=link_File_Name__ID></u><br>
                                     <u style='cursor:pointer' id=link_File_Name_2__ID></u><br>
                                     <u style='cursor:pointer' id=link_File_Name_3__ID></u><br>
                                 </label>
                             </fieldset>
+                            <br>
+                            <fieldset class="">
+                                <i><b>UPDATE: Genotyping of cannabis plant material</b><br>We are interested in genetically testing the cannabis plant material previously submitted to the CAN-ACT study. We aim to achieve a more nuanced understanding of the diversity of cannabis strains present in the ACT.
+                                    <br><br>Determining the strain will provide a “backstory” for the expression of phytocannabinoids and terpenes in cannabis. This information is important as it allows us to determine how and why different levels of phytocannabinoids and terpenes are expressed, as well as impact of external environmental factors (e.g. growing conditions).
+                                    <br><br>This information will also be compared with the strain profiles of known commercial, medicinal cannabis cultivars. Comparing strains from CAN-ACT to commercial strains from the medicinal cannabis market will generate crucial information around their similarity/differences.
+                                    <br><br>It is our hope that this research will provide essential information around the quality of home-grown cannabis in the ACT and support future policy changes in the ACT and nationally.
+                                    <br><br>This will not compromise participant anonymity. The genetic analyses are performed using similar experimental methods to used for phytocannabinoid/terpene analysis, and the same previously submitted and analysed sample will be used.
+                                    <br><br>If you do not wish for your cannabis sample to undergo genetic profiling, log into your account using your CAN-ACT User ID and Password and select ‘I do not consent for my cannabis sample to undergo genetic profiling’ in the Free Analysis of Your Cannabis section.
+                                    <br><br>Please contact the CAN-ACT team on: +61 481 475 730 if you have any questions. To maintain your anonymity, you should switch your phone to ‘Private mode’.
+                                    </i><br><br>
+                                If you do not wish for your cannabis sample to undergo genetic profiling, click 
+                                    <b><u style="cursor: pointer;" id="dna_opt_out__ID">here </u></b>to access the opt-out checkbox.<br>
+                            </fieldset>
+                            <br>
                         </div>
                     </div>
                     <div class="form-group">
@@ -468,6 +491,18 @@
                     $('#pickup__ID').click();
                 }
             }
+            //----------------------
+            $('#dna_opt_out__ID').on('click',function(){
+                //console.log(JSON.stringify(m.input.participant_record));
+                //console.log(JSON.stringify($vm.module_list['dna']));
+                var db=""; 
+                //$vm.load_module($vm.module_list['dna'].url,'',{});
+                var new_html=window.location.toString();
+                new_html=new_html.replace('oq-2.html','oq-dna.html')
+                //new_html=new_html.replace('oq-2.html','oq-dna.html')
+                window.open(new_html);
+            })
+            //----------------------
             $('#first_analysis__ID').on('click',function(){
                 console.log(JSON.stringify(m.input.participant_record));
                 console.log(window.location.toString())

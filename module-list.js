@@ -9,7 +9,8 @@
         "participant-data":   	{url:"$H/m/survey-data.html",Table:"canact-survey",form_module:"participant-form",
                                             child_panel:"panel-child",
                                             questionnaire_setup:"online-questionnaire-setup-canact",
-                                            online_questionnaire:"online-questionnaire",report:"$H/oq.html"},                                    
+                                            online_questionnaire:"online-questionnaire",report:"$H/oq.html",report_2:"$H/oq-2.html",                                    
+                                            online_dna:"dna"},                                    
         "participant-form":   	{url:"$H/m/survey-form.html",Table:"canact-survey"},
 
         "survey-data": {url:"$H/m/survey-data.html",Table:"canact-survey",form_module:"survey-form",report:"$H/oq.html",report_2:"$H/oq-2.html"},
@@ -20,6 +21,7 @@
         "report-canact":{url:"$H/oq.html"},
         "report":       {url:"$H/m/oq-panel.html"},
         "report_2":       {url:"$H/m/oq-2-panel.html"},
+        "dna":      {url:"$H/m/oq-dna-panel.html","Table":"canact-dna" },      
         "online-questionnaire":{url:"$H/m/oq-panel.html"},
         "cannabis-ii-data": {url:"$H/m/cannabis-ii-data.html",Table:"canact-cannabis-ii",form_module:"cannabis-ii-form",task_name:"II. PREVIOUS AND CURRENT CANNABIS USE"},
         "cannabis-iii-data": {url:"$H/m/cannabis-iii-data.html",Table:"canact-cannabis-iii",form_module:"cannabis-iii-form",task_name:"III. CANNABIS CULTIVATION"},
@@ -50,6 +52,8 @@
         "cannabis-prelab-i-analysis-form": {url:"$H/m/cannabis-prelab-i-analysis-form.html",Table:"canact-cannabis-prelab",task_name:"2. Free analysis of your cannabis (information & consent)"},
         "cannabis-prelab-i-analysis-2-data": {url:"$H/m/cannabis-prelab-i-analysis-data.html",Table:"canact-cannabis-prelab-2",form_module:"cannabis-prelab-i-analysis-2-form",task_name:"Analysis info and Consent"},
         "cannabis-prelab-i-analysis-2-form": {url:"$H/m/cannabis-prelab-i-analysis-form.html",Table:"canact-cannabis-prelab-2",task_name:"1. Second free analysis of your cannabis (information & consent)"},
+        "cannabis-dna-data": {url:"$H/m/cannabis-dna-data.html",Table:"canact-cannabis-dna",form_module:"cannabis-dna-form",task_name:"Opt-out checkbox"},
+        "cannabis-dna-form": {url:"$H/m/cannabis-dna-form.html",Table:"canact-cannabis-dna",task_name:"Opt-out checkbox"},
 
     }
     for(p in modules){
